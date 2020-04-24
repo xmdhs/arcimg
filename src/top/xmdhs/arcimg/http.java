@@ -14,6 +14,7 @@ public class http {
             connection.setRequestMethod("GET");
             connection.setUseCaches(false);
             connection.setConnectTimeout(5000);
+            connection.setReadTimeout(10000);
             connection.setRequestProperty("Accept-Encoding", "identity");
             connection.setRequestProperty("Content-Type", "application/x-www-form-urlencoded; charset=utf-8");
             connection.setRequestProperty("Authorization", "");//填入抓包获取的
