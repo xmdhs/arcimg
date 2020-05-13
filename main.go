@@ -7,7 +7,7 @@ import (
 )
 
 func main() {
+        go arcimg.Remove()
 	http.HandleFunc("/img.png", arcimg.Img)
 	log.Fatal(http.ListenAndServe("localhost:8080", nil))
-	go arcimg.Remove()
 }
