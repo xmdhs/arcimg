@@ -20,7 +20,11 @@ func Img(w http.ResponseWriter, req *http.Request) {
 	i, bb := ma.LoadOrStore(ip, 0)
 	if bb {
 		ii, _ := i.(int)
-		ma.Store(ip, ii+1)
+		if ii > 20 {
+			ma.Store(ip, 30)
+		} else {
+			ma.Store(ip, ii+1)
+		}
 	}
 	i, bb = ma.Load(ip)
 	ii, _ := i.(int)
