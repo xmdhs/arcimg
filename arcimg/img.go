@@ -21,7 +21,7 @@ const (
 	fontDPI  = 150 // 屏幕每英寸的分辨率
 )
 
-func Createimg(w io.Writer, info *arcinfo) {
+func createimg(w io.Writer, info *arcinfo) {
 	// 需要保存的文件
 	// 新建一个 指定大小的 RGBA位图
 	img := image.NewNRGBA(image.Rect(0, 0, dx, dy))
@@ -55,13 +55,13 @@ func Createimg(w io.Writer, info *arcinfo) {
 	c.SetSrc(image.Black)
 
 	pt := freetype.Pt(460, 105) // 字出现的位置
-	_, err = c.DrawString(info.Value[0].Value.Friends[0].Name, pt)
+	_, err = c.DrawString(info.Value[0].Avalue.Friends[0].Name, pt)
 
 	pt = freetype.Pt(84, 68)
-	_, err = c.DrawString(info.Value[0].Value.Friends[0].RecentScore[0].SongID+"("+info.SongID()+")", pt)
+	_, err = c.DrawString(info.Value[0].Avalue.Friends[0].Recentscore[0].SongID+"("+info.SongID()+")", pt)
 
 	pt = freetype.Pt(84, 95)
-	_, err = c.DrawString(strconv.Itoa(info.Value[0].Value.Friends[0].RecentScore[0].Score), pt)
+	_, err = c.DrawString(strconv.Itoa(info.Value[0].Avalue.Friends[0].Recentscore[0].Score), pt)
 
 	pt = freetype.Pt(84, 119)
 	_, err = c.DrawString(info.atype(), pt)

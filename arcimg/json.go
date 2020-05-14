@@ -9,28 +9,36 @@ import (
 )
 
 type arcinfo struct {
-	Value []struct {
-		Value struct {
-			Friends []struct {
-				Name        string `json:"name"`
-				Rating      int    `json:"rating"`
-				RecentScore []struct {
-					BestClearType     int     `json:"best_clear_type"`
-					ClearType         int     `json:"clear_type"`
-					Difficulty        int     `json:"difficulty"`
-					MissCount         int     `json:"miss_count"`
-					Modifier          int     `json:"modifier"`
-					NearCount         int     `json:"near_count"`
-					PerfectCount      int     `json:"perfect_count"`
-					Rating            float64 `json:"rating"`
-					Score             int     `json:"score"`
-					ShinyPerfectCount int     `json:"shiny_perfect_count"`
-					SongID            string  `json:"song_id"`
-					TimePlayed        int     `json:"time_played"`
-				} `json:"recent_score"`
-			} `json:"friends"`
-		} `json:"value"`
-	} `json:"value"`
+	Value []value `json:"value"`
+}
+
+type value struct {
+	Avalue avalue `json:"value"`
+}
+
+type avalue struct {
+	Friends []friends `json:"friends"`
+}
+
+type friends struct {
+	Name        string        `json:"name"`
+	Rating      int           `json:"rating"`
+	Recentscore []recentscore `json:"recent_score"`
+}
+
+type recentscore struct {
+	BestClearType     int     `json:"best_clear_type"`
+	ClearType         int     `json:"clear_type"`
+	Difficulty        int     `json:"difficulty"`
+	MissCount         int     `json:"miss_count"`
+	Modifier          int     `json:"modifier"`
+	NearCount         int     `json:"near_count"`
+	PerfectCount      int     `json:"perfect_count"`
+	Rating            float64 `json:"rating"`
+	Score             int     `json:"score"`
+	ShinyPerfectCount int     `json:"shiny_perfect_count"`
+	SongID            string  `json:"song_id"`
+	TimePlayed        int     `json:"time_played"`
 }
 
 func Json2(jsonn *string) arcinfo {
@@ -42,7 +50,7 @@ func Json2(jsonn *string) arcinfo {
 }
 
 func (a *arcinfo) atype() string {
-	switch a.Value[0].Value.Friends[0].RecentScore[0].ClearType {
+	switch a.Value[0].Avalue.Friends[0].Recentscore[0].ClearType {
 	case 0:
 		return "Track Lost"
 	case 1:
@@ -61,7 +69,7 @@ func (a *arcinfo) atype() string {
 }
 
 func (a *arcinfo) Time() string {
-	return convertTimeToFormat(a.Value[0].Value.Friends[0].RecentScore[0].TimePlayed)
+	return convertTimeToFormat(a.Value[0].Avalue.Friends[0].Recentscore[0].TimePlayed)
 }
 
 func convertTimeToFormat(timetamp int) string {
@@ -105,25 +113,25 @@ func convertTimeToFormat(timetamp int) string {
 }
 
 func (a *arcinfo) Pure() string {
-	return "PURE: " + strconv.Itoa(a.Value[0].Value.Friends[0].RecentScore[0].PerfectCount) + "(" +
-		strconv.Itoa(a.Value[0].Value.Friends[0].RecentScore[0].ShinyPerfectCount) + ")"
+	return "PURE: " + strconv.Itoa(a.Value[0].Avalue.Friends[0].Recentscore[0].PerfectCount) + "(" +
+		strconv.Itoa(a.Value[0].Avalue.Friends[0].Recentscore[0].ShinyPerfectCount) + ")"
 }
 
 func (a *arcinfo) Far() string {
-	return "FAR: " + strconv.Itoa(a.Value[0].Value.Friends[0].RecentScore[0].NearCount)
+	return "FAR: " + strconv.Itoa(a.Value[0].Avalue.Friends[0].Recentscore[0].NearCount)
 }
 
 func (a *arcinfo) Lost() string {
-	return "LOST: " + strconv.Itoa(a.Value[0].Value.Friends[0].RecentScore[0].MissCount)
+	return "LOST: " + strconv.Itoa(a.Value[0].Avalue.Friends[0].Recentscore[0].MissCount)
 }
 
 func (a *arcinfo) Rating() string {
-	str1 := fmt.Sprintf("%f", a.Value[0].Value.Friends[0].RecentScore[0].Rating)
+	str1 := fmt.Sprintf("%f", a.Value[0].Avalue.Friends[0].Recentscore[0].Rating)
 	return "Result rating: " + str1
 }
 
 func (a *arcinfo) PTT() string {
-	ptt := strconv.Itoa(a.Value[0].Value.Friends[0].Rating)
+	ptt := strconv.Itoa(a.Value[0].Avalue.Friends[0].Rating)
 	i := len(ptt)
 	if i == 3 {
 		return "PTT: " + ptt[0:1] + "." + ptt[1:]
@@ -135,7 +143,7 @@ func (a *arcinfo) PTT() string {
 }
 
 func (a *arcinfo) SongID() string {
-	Difficulty := a.Value[0].Value.Friends[0].RecentScore[0].Difficulty
+	Difficulty := a.Value[0].Avalue.Friends[0].Recentscore[0].Difficulty
 	switch Difficulty {
 	case 0:
 		return "PST"

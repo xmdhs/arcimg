@@ -34,22 +34,19 @@ func Img(w http.ResponseWriter, req *http.Request) {
 	mu.Lock()
 	if time.Now().Unix()-atime > 600000 {
 		atime = time.Now().Unix()
-		ajson = Getjson()
+		ajson = getjson()
 	}
-	mu.Unlock()
-	w.Header().Add("Cache-Control", "max-age=60")
-	w.Header().Add("content-type", "image/png")
-	w.Header().Add("server", "xmdhs")
-	info := Json2(ajson)
-	mu.Lock()
 	if b.Len() == 0 {
-		Createimg(&b, &info)
-
+		info := Json2(ajson)
+		createimg(&b, &info)
 	}
 	if time.Now().Unix()-atime > 30000 {
 		atime = time.Now().Unix()
-		Createimg(&b, &info)
+		info := Json2(ajson)
+		createimg(&b, &info)
 	}
 	mu.Unlock()
+	w.Header().Set("Cache-Control", "max-age=60")
+	w.Header().Set("server", "xmdhs")
 	w.Write(b.Bytes())
 }
