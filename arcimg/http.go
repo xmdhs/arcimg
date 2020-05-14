@@ -37,6 +37,9 @@ func Img(w http.ResponseWriter, req *http.Request) {
 		atime = time.Now().Unix()
 		ajson = getjson()
 	}
+	if b.Len() == 0 {
+		_ = Json2(ajson)
+	}
 	if time.Now().Unix()-btime > 30 {
 		btime = time.Now().Unix()
 		info := Json2(ajson)
