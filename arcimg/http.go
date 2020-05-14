@@ -9,6 +9,7 @@ import (
 )
 
 var atime int64
+var btime int64
 var mu sync.Mutex
 var ajson *string
 var b bytes.Buffer
@@ -40,8 +41,8 @@ func Img(w http.ResponseWriter, req *http.Request) {
 		info := Json2(ajson)
 		createimg(&b, &info)
 	}
-	if time.Now().Unix()-atime > 30000 {
-		atime = time.Now().Unix()
+	if time.Now().Unix()-btime > 30000 {
+		btime = time.Now().Unix()
 		info := Json2(ajson)
 		createimg(&b, &info)
 	}
