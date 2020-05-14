@@ -37,7 +37,7 @@ func Img(w http.ResponseWriter, req *http.Request) {
 		atime = time.Now().Unix()
 		ajson = getjson()
 	}
-	if b.Len() == 0 {
+	if b == nil {
 		info := Json2(ajson)
 		createimg(b, &info)
 	}
