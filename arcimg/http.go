@@ -12,7 +12,7 @@ var atime int64
 var btime int64
 var mu sync.Mutex
 var ajson *string
-var b bytes.Buffer
+var b *bytes.Buffer
 var ma sync.Map
 
 func Img(w http.ResponseWriter, req *http.Request) {
@@ -39,12 +39,14 @@ func Img(w http.ResponseWriter, req *http.Request) {
 	}
 	if b.Len() == 0 {
 		info := Json2(ajson)
-		createimg(&b, &info)
+		createimg(b, &info)
 	}
 	if time.Now().Unix()-btime > 30000 {
 		btime = time.Now().Unix()
 		info := Json2(ajson)
-		createimg(&b, &info)
+		abyte := []byte{}
+		b = bytes.NewBuffer(abyte)
+		createimg(b, &info)
 	}
 	mu.Unlock()
 	w.Header().Set("Cache-Control", "max-age=60")
