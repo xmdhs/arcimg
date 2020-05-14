@@ -45,8 +45,7 @@ func Img(w http.ResponseWriter, req *http.Request) {
 		btime = time.Now().Unix()
 		info := Json2(ajson)
 		abyte := []byte{}
-		c := &b
-		c = bytes.NewBuffer(abyte)
+		c := bytes.NewBuffer(abyte)
 		createimg(c, &info)
 		b = *c
 	}
