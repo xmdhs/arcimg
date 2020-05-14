@@ -33,15 +33,11 @@ func Img(w http.ResponseWriter, req *http.Request) {
 		return
 	}
 	mu.Lock()
-	if time.Now().Unix()-atime > 600000 {
+	if time.Now().Unix()-atime > 600 {
 		atime = time.Now().Unix()
 		ajson = getjson()
 	}
-	if b.Len() == 0 {
-		info := Json2(ajson)
-		createimg(&b, &info)
-	}
-	if time.Now().Unix()-btime > 30000 {
+	if time.Now().Unix()-btime > 30 {
 		btime = time.Now().Unix()
 		info := Json2(ajson)
 		abyte := []byte{}
