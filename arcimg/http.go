@@ -38,10 +38,10 @@ func Img(w http.ResponseWriter, req *http.Request) {
 		ajson = getjson()
 	}
 	if b.Len() == 0 {
-		//info := Json2(ajson)
-		//createimg(&b, &info)
+		info := Json2(ajson)
+		createimg(&b, &info)
 	}
-	if time.Now().Unix()-btime > 1 {
+	if time.Now().Unix()-btime > 30000 {
 		btime = time.Now().Unix()
 		info := Json2(ajson)
 		abyte := []byte{}
