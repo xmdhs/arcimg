@@ -10,6 +10,7 @@ import (
 )
 
 func main() {
+
 	go arcimg.Remove()
 	mux := http.NewServeMux()
 	server := &http.Server{
@@ -20,5 +21,6 @@ func main() {
 	}
 	mux.HandleFunc("/img.png", arcimg.Img)
 	http2.ConfigureServer(server, &http2.Server{})
-	log.Fatal(server.ListenAndServe())
+	log.Println(server.ListenAndServe())
+
 }

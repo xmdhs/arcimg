@@ -94,6 +94,6 @@ func createimg(w io.Writer, info *arcinfo) {
 	err = png.Encode(w, img)
 	if err != nil {
 		log.Println("生成图片出错")
-		log.Fatal(err)
+		log.Println(err)
 	}
 }

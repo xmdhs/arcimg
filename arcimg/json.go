@@ -44,7 +44,7 @@ type recentscore struct {
 func Json2(jsonn *string) arcinfo {
 	var arc arcinfo
 	if err := json.Unmarshal([]byte(*jsonn), &arc); err != nil {
-		log.Fatal(err)
+		log.Println(err)
 	}
 	return arc
 }
