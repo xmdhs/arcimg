@@ -35,10 +35,9 @@ func Img(w http.ResponseWriter, req *http.Request) {
 	mu.Lock()
 	if time.Now().Unix()-atime > 600 {
 		atime = time.Now().Unix()
-		go get()
+		ajson = getjson()
 	}
 	if b == nil {
-		get()
 		_ = Json2(ajson)
 	}
 	if time.Now().Unix()-btime > 30 {
