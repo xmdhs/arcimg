@@ -2,29 +2,41 @@ package arcimg
 
 import (
 	"bytes"
+	"io"
 	"log"
 	"net/http"
+	"os"
 	"sync"
 	"time"
 )
 
-var atime int64
-var btime int64
-var mu sync.Mutex
-var ajson string
-var b *bytes.Buffer
-var ma sync.Map
+var (
+	atime  int64
+	btime  int64
+	mu     sync.Mutex
+	ajson  string
+	b      *bytes.Buffer
+	ma     sync.Map
+	logger *log.Logger
+)
 
 func init() {
 	get()
 	if ajson == "" {
 		log.Fatalln("Can not get json")
 	}
+	f, err := os.OpenFile("arcimg.log", os.O_WRONLY|os.O_CREATE|os.O_APPEND, 0666)
+	if err != nil {
+		log.Fatal(err)
+	}
+	defer f.Close()
+	fileAndStdoutWriter := io.MultiWriter(f, os.Stdout)
+	logger = log.New(fileAndStdoutWriter, "", log.Ldate|log.Ltime)
 }
 
 func Img(w http.ResponseWriter, req *http.Request) {
 	ip := req.Header.Get("X-Forwarded-For")
-	log.Println(ip + " | " + req.Header.Get("Referer"))
+	logger.Println(ip + " | " + req.Header.Get("Referer"))
 	i, bb := ma.LoadOrStore(ip, 0)
 	if bb {
 		ii, _ := i.(int)

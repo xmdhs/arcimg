@@ -10,7 +10,6 @@ import (
 )
 
 func main() {
-
 	go arcimg.Remove()
 	mux := http.NewServeMux()
 	server := &http.Server{
