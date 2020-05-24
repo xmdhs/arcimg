@@ -29,7 +29,6 @@ func init() {
 	if err != nil {
 		log.Fatal(err)
 	}
-	defer f.Close()
 	fileAndStdoutWriter := io.MultiWriter(f, os.Stdout)
 	logger = log.New(fileAndStdoutWriter, "", log.Ldate|log.Ltime)
 }
