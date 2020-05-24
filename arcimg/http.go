@@ -11,13 +11,21 @@ import (
 var atime int64
 var btime int64
 var mu sync.Mutex
-var ajson *string
+var ajson string
 var b *bytes.Buffer
 var ma sync.Map
+
+func init() {
+	get()
+	if ajson == "" {
+		log.Fatalln("Can not get json")
+	}
+}
 
 func Img(w http.ResponseWriter, req *http.Request) {
 	ip := req.Header.Get("X-Forwarded-For")
 	log.Println(ip)
+	log.Println(req.Header.Get("Referer"))
 	i, bb := ma.LoadOrStore(ip, 0)
 	if bb {
 		ii, _ := i.(int)
@@ -35,14 +43,14 @@ func Img(w http.ResponseWriter, req *http.Request) {
 	mu.Lock()
 	if time.Now().Unix()-atime > 600 {
 		atime = time.Now().Unix()
-		ajson = getjson()
-	}
-	if b == nil {
-		_ = Json2(ajson)
+		go get()
 	}
 	if time.Now().Unix()-btime > 30 {
 		btime = time.Now().Unix()
-		info := Json2(ajson)
+		info, err := Json2(ajson)
+		if err != nil {
+			return
+		}
 		abyte := []byte{}
 		c := bytes.NewBuffer(abyte)
 		createimg(c, &info)
