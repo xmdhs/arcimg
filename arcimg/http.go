@@ -24,8 +24,7 @@ func init() {
 
 func Img(w http.ResponseWriter, req *http.Request) {
 	ip := req.Header.Get("X-Forwarded-For")
-	log.Println(ip)
-	log.Println(req.Header.Get("Referer"))
+	log.Println(ip + " | " + req.Header.Get("Referer"))
 	i, bb := ma.LoadOrStore(ip, 0)
 	if bb {
 		ii, _ := i.(int)
