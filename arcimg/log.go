@@ -19,9 +19,9 @@ func Logw() {
 	defer f.Close()
 	fileAndStdoutWriter := io.MultiWriter(f, os.Stdout)
 	logger = log.New(fileAndStdoutWriter, "", log.Ldate|log.Ltime)
-
+	var t string
 	for {
-		t := <-loggers
+		t = <-loggers
 		logger.Printf(t)
 	}
 }
