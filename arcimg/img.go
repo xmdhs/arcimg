@@ -10,7 +10,23 @@ import (
 	"strconv"
 
 	"github.com/golang/freetype"
+	"github.com/golang/freetype/truetype"
 )
+
+func init() {
+	fontBytes, err := ioutil.ReadFile(fontFile)
+	if err != nil {
+		log.Println("读取字体数据出错")
+		log.Fatalln(err)
+	}
+	font, err = freetype.ParseFont(fontBytes)
+	if err != nil {
+		log.Println("转换字体样式出错")
+		log.Fatalln(err)
+	}
+}
+
+var font *truetype.Font
 
 const (
 	dx = 615 // 图片的大小 宽度
@@ -33,18 +49,6 @@ func createimg(w io.Writer, info *arcinfo) {
 		}
 	}
 	// 读字体数据
-	fontBytes, err := ioutil.ReadFile(fontFile)
-	if err != nil {
-		log.Println("读取字体数据出错")
-		log.Println(err)
-		return
-	}
-	font, err := freetype.ParseFont(fontBytes)
-	if err != nil {
-		log.Println("转换字体样式出错")
-		log.Println(err)
-		return
-	}
 
 	c := freetype.NewContext()
 	c.SetDPI(fontDPI)
@@ -55,7 +59,7 @@ func createimg(w io.Writer, info *arcinfo) {
 	c.SetSrc(image.Black)
 
 	pt := freetype.Pt(460, 105) // 字出现的位置
-	_, err = c.DrawString(info.Value[0].Avalue.Friends[0].Name, pt)
+	_, err := c.DrawString(info.Value[0].Avalue.Friends[0].Name, pt)
 
 	pt = freetype.Pt(84, 68)
 	_, err = c.DrawString(info.Value[0].Avalue.Friends[0].Recentscore[0].SongID+"("+info.SongID()+")", pt)
