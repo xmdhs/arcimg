@@ -13,7 +13,7 @@ var (
 	btime       int64
 	mu          sync.Mutex
 	ajson       string
-	b           *bytes.Buffer
+	b           *bytes.Buffer = bytes.NewBuffer(nil)
 	ma          sync.Map
 	Logoutfiles bool
 	o           sync.Once
@@ -58,10 +58,11 @@ func Img(w http.ResponseWriter, req *http.Request) {
 		if err != nil {
 			mu.Unlock()
 			return
+		} else if info.Value != nil {
+			c := bytes.NewBuffer(nil)
+			createimg(c, &info)
+			b = c
 		}
-		c := bytes.NewBuffer(nil)
-		createimg(c, &info)
-		b = c
 	}
 	mu.Unlock()
 	w.Header().Set("Cache-Control", "max-age=60")

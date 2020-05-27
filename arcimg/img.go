@@ -38,9 +38,6 @@ const (
 )
 
 func createimg(w io.Writer, info *arcinfo) {
-	if info.Value == nil {
-		return
-	}
 	// 需要保存的文件
 	// 新建一个 指定大小的 RGBA位图
 	img := image.NewNRGBA(image.Rect(0, 0, dx, dy))
