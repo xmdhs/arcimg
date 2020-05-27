@@ -56,13 +56,14 @@ func Img(w http.ResponseWriter, req *http.Request) {
 		btime = time.Now().Unix()
 		info, err := Json2(ajson)
 		if err != nil || info.Value == nil {
-			return
+			goto to
 		}
 		abyte := []byte{}
 		c := bytes.NewBuffer(abyte)
 		createimg(c, &info)
 		b = c
 	}
+to:
 	mu.Unlock()
 	w.Header().Set("Cache-Control", "max-age=60")
 	w.Header().Set("server", "xmdhs")
