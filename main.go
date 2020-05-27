@@ -4,22 +4,21 @@ import (
 	"arcimg/arcimg"
 	"log"
 	"net/http"
-	"os"
 	"time"
 
 	"golang.org/x/net/http2"
 )
 
 func main() {
-	args := os.Args
-	if args[1] == "true" {
-		arcimg.Logoutfiles = true
-		go arcimg.Logw()
-	} else if args[1] == "false" {
-		arcimg.Logoutfiles = false
-	} else {
-		os.Exit(0)
-	}
+	/*	args := os.Args
+		if args[1] == "true" {
+			arcimg.Logoutfiles = true
+			go arcimg.Logw()
+		} else if args[1] == "false" {
+			arcimg.Logoutfiles = false
+		} else {
+			os.Exit(0)
+		}*/
 	go arcimg.Remove()
 	mux := http.NewServeMux()
 	server := &http.Server{

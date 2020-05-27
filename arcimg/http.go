@@ -56,8 +56,7 @@ func Img(w http.ResponseWriter, req *http.Request) {
 		btime = time.Now().Unix()
 		info, err := Json2(ajson)
 		if err != nil {
-			mu.Unlock()
-			return
+			log.Println(err)
 		} else if info.Value != nil {
 			c := bytes.NewBuffer(nil)
 			createimg(c, &info)
