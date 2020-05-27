@@ -55,7 +55,7 @@ func Img(w http.ResponseWriter, req *http.Request) {
 	if time.Now().Unix()-btime > 30 {
 		btime = time.Now().Unix()
 		info, err := Json2(ajson)
-		if err != nil {
+		if err != nil || info.Value == nil {
 			return
 		}
 		abyte := []byte{}
