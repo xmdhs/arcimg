@@ -62,10 +62,8 @@ func createimg(w io.Writer, info *arcinfo) {
 	_, err := c.DrawString(info.Value[0].Avalue.Friends[0].Name, pt)
 
 	pt = freetype.Pt(84, 68)
-	a := len(getsongname(info.Value[0].Avalue.Friends[0].Recentscore[0].SongID))
-	_ = a
 	if len(getsongname(info.Value[0].Avalue.Friends[0].Recentscore[0].SongID)) > 15 {
-		pt = freetype.Pt(74, 68)
+		pt = freetype.Pt(66, 68)
 	}
 	_, err = c.DrawString(getsongname(info.Value[0].Avalue.Friends[0].Recentscore[0].SongID)+"("+info.SongID()+")", pt)
 
