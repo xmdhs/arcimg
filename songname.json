@@ -1,415 +1,105 @@
-[
-    {
-        "id": "ifi",
-        "song": "#1f1e33"
-    },
-    {
-        "id": "babaroque",
-        "song": "Babaroque"
-    },
-    {
-        "id": "sayonarahatsukoi",
-        "song": "Sayonara Hatsukoi"
-    },
-    {
-        "id": "brandnewworld",
-        "song": "Brand new world"
-    },
-    {
-        "id": "clotho",
-        "song": "Clotho and the stargazer"
-    },
-    {
-        "id": "dement",
-        "song": "Dement ~after legend~"
-    },
-    {
-        "id": "fairytale",
-        "song": "Fairytale"
-    },
-    {
-        "id": "infinityheaven",
-        "song": "Infinity Heaven"
-    },
-    {
-        "id": "inkarusi",
-        "song": "inkar-usi"
-    },
-    {
-        "id": "rise",
-        "song": "Rise"
-    },
-    {
-        "id": "vexaria",
-        "song": "Vexaria"
-    },
-    {
-        "id": "suomi",
-        "song": "Suomi"
-    },
-    {
-        "id": "dandelion",
-        "song": "Dandelion"
-    },
-    {
-        "id": "harutopia",
-        "song": "Harutopia ~Utopia of Spring~"
-    },
-    {
-        "id": "lucifer",
-        "song": "Lucifer"
-    },
-    {
-        "id": "onelastdrive",
-        "song": "One Last Drive"
-    },
-    {
-        "id": "purgatorium",
-        "song": "Purgatorium"
-    },
-    {
-        "id": "rabbitintheblackroom",
-        "song": "Rabbit In The Black Room"
-    },
-    {
-        "id": "reinvent",
-        "song": "Reinvent"
-    },
-    {
-        "id": "shadesoflight",
-        "song": "Shades of Light in a Transcendent Realm"
-    },
-    {
-        "id": "snowwhite",
-        "song": "Snow White"
-    },
-    {
-        "id": "bookmaker",
-        "song": "Bookmaker(2D Version)"
-    },
-    {
-        "id": "anokumene",
-        "song": "Anokumene"
-    },
-    {
-        "id": "blaster",
-        "song": "Blaster"
-    },
-    {
-        "id": "chronostasis",
-        "song": "Chronostasis"
-    },
-    {
-        "id": "cyberneciacatharsis",
-        "song": "Cybernecia Catharsis"
-    },
-    {
-        "id": "dreaminattraction",
-        "song": "Dreamin' Attraction!!"
-    },
-    {
-        "id": "goodtek",
-        "song": "GOODTEK(Arcaea Edit)"
-    },
-    {
-        "id": "ignotus",
-        "song": "Ignotus"
-    },
-    {
-        "id": "kanagawa",
-        "song": "Kanagawa Cyber Culvert"
-    },
-    {
-        "id": "lostcivilization",
-        "song": "Lost Civilization"
-    },
-    {
-        "id": "qualia",
-        "song": "qualia -ideaesthesia-"
-    },
-    {
-        "id": "redandblue",
-        "song": "Red and Blue"
-    },
-    {
-        "id": "syro",
-        "song": "Syro"
-    },
-    {
-        "id": "darakunosono",
-        "song": "Illegal Paradise"
-    },
-    {
-        "id": "espebranch",
-        "song": "LunarOrbit -believe in the Espebranch road-"
-    },
-    {
-        "id": "nhelv",
-        "song": "Nhelv"
-    },
-    {
-        "id": "mazenine",
-        "song": "Maze No.9"
-    },
-    {
-        "id": "sulfur",
-        "song": "Sulfur"
-    },
-    {
-        "id": "themessage",
-        "song": "The Message"
-    },
-    {
-        "id": "etherstrike",
-        "song": "Ether Strike"
-    },
-    {
-        "id": "halcyon",
-        "song": "Halcyon"
-    },
-    {
-        "id": "fractureray",
-        "song": "Fracture Ray"
-    },
-    {
-        "id": "iconoclast",
-        "song": "Iconoclast"
-    },
-    {
-        "id": "soundwitch",
-        "song": "SOUNDWiTCH"
-    },
-    {
-        "id": "trappola",
-        "song": "trappola bewitching"
-    },
-    {
-        "id": "axiumcrisis",
-        "song": "Axium Crisis"
-    },
-    {
-        "id": "conflict",
-        "song": "conflict"
-    },
-    {
-        "id": "grievouslady",
-        "song": "Grievous Lady"
-    },
-    {
-        "id": "viyella",
-        "song": "cry of viyella"
-    },
-    {
-        "id": "hearditsaid",
-        "song": "I've heard it said"
-    },
-    {
-        "id": "lumia",
-        "song": "Lumia"
-    },
-    {
-        "id": "memoryfactory",
-        "song": "memoryfactory.lzh"
-    },
-    {
-        "id": "relentless",
-        "song": "Relentless"
-    },
-    {
-        "id": "essenceoftwilight",
-        "song": "Essence of Twilight"
-    },
-    {
-        "id": "pragmatism",
-        "song": "PRAGMATISM"
-    },
-    {
-        "id": "sheriruth",
-        "song": "Sheriruth"
-    },
-    {
-        "id": "nexttoyou",
-        "song": "next to you"
-    },
-    {
-        "id": "silentrush",
-        "song": "Silent Rush"
-    },
-    {
-        "id": "memoryforest",
-        "song": "Memory Forest"
-    },
-    {
-        "id": "strongholds",
-        "song": "Strongholds"
-    },
-    {
-        "id": "singularity",
-        "song": "Singularity"
-    },
-    {
-        "id": "blossoms",
-        "song": "Blossoms"
-    },
-    {
-        "id": "romancewars",
-        "song": "Romance Wars"
-    },
-    {
-        "id": "genesis",
-        "song": "Genesis"
-    },
-    {
-        "id": "moonheart",
-        "song": "Moonheart"
-    },
-    {
-        "id": "lethaeus",
-        "song": "Lethaeus"
-    },
-    {
-        "id": "paradise",
-        "song": "Paradise"
-    },
-    {
-        "id": "flashback",
-        "song": "Flashback"
-    },
-    {
-        "id": "flyburg",
-        "song": "Flyburg and Endroll"
-    },
-    {
-        "id": "partyvinyl",
-        "song": "Party Vinyl"
-    },
-    {
-        "id": "nirvluce",
-        "song": "Nirv lucE"
-    },
-    {
-        "id": "dreamgoeson",
-        "song": "Dream goes on"
-    },
-    {
-        "id": "journey",
-        "song": "Journey"
-    },
-    {
-        "id": "quon",
-        "song": "Quon"
-    },
-    {
-        "id": "specta",
-        "song": "Specta"
-    },
-    {
-        "id": "cyanine",
-        "song": "cyanine"
-    },
-    {
-        "id": "surrender",
-        "song": "Surrender"
-    },
-    {
-        "id": "yozakurafubuki",
-        "song": "Yosakura Fubuki"
-    },
-    {
-        "id": "moonlightofsandcastle",
-        "song": "Moonlight of Sand Castle"
-    },
-    {
-        "id": "evoltex",
-        "song": "Evoltex(poppi'n mix)"
-    },
-    {
-        "id": "reconstruction",
-        "song": "REconstruction"
-    },
-    {
-        "id": "oracle",
-        "song": "Oracle"
-    },
-    {
-        "id": "aterlbus",
-        "song": "aterlbus"
-    },
-    {
-        "id": "callmyname",
-        "song": "Call My Name feat.Yukacco"
-    },
-    {
-        "id": "dropdead",
-        "song": "dropdead"
-    },
-    {
-        "id": "alexandrite",
-        "song": "Alexandrite"
-    },
-    {
-        "id": "auxesia",
-        "song": "Auxesia"
-    },
-    {
-        "id": "bethere",
-        "song": "Be There"
-    },
-    {
-        "id": "carminescythe",
-        "song": "carmine:scythe"
-    },
-    {
-        "id": "crosssoul",
-        "song": "CROSS+SOUL"
-    },
-    {
-        "id": "dataerror",
-        "song": "DataErr0r"
-    },
-    {
-        "id": "fallensquare",
-        "song": "Fallensquare"
-    },
-    {
-        "id": "impurebird",
-        "song": "Impure Bird"
-    },
-    {
-        "id": "modelista",
-        "song": "Modelista"
-    },
-    {
-        "id": "yourvoiceso",
-        "song": "Your voice so... feat.Such"
-    },
-    {
-        "id": "metallicpunisher",
-        "song": "Metallic Punisher"
-    },
-    {
-        "id": "guardina",
-        "song": "guardina"
-    },
-    {
-        "id": "hikari",
-        "song": "Hikari"
-    },
-    {
-        "id": "linearaccelerator",
-        "song": "Linear Accelerator"
-    },
-    {
-        "id": "hallofmirrors",
-        "song": "Hall of Mirrors"
-    },
-    {
-        "id": "stager",
-        "song": "STAGER(ALL STAGE CLEAR)"
-    },
-    {
-        "id": "tiferet",
-        "song": "Tiferet"
-    }
-
-]
+{
+    "alexandrite": "Alexandrite",
+    "anokumene": "Anokumene",
+    "aterlbus": "aterlbus",
+    "auxesia": "Auxesia",
+    "axiumcrisis": "Axium Crisis",
+    "babaroque": "Babaroque",
+    "bethere": "Be There",
+    "blaster": "Blaster",
+    "blossoms": "Blossoms",
+    "bookmaker": "Bookmaker(2D Version)",
+    "brandnewworld": "Brand new world",
+    "callmyname": "Call My Name feat.Yukacco",
+    "carminescythe": "carmine:scythe",
+    "chronostasis": "Chronostasis",
+    "clotho": "Clotho and the stargazer",
+    "conflict": "conflict",
+    "crosssoul": "CROSS+SOUL",
+    "cyanine": "cyanine",
+    "cyberneciacatharsis": "Cybernecia Catharsis",
+    "dandelion": "Dandelion",
+    "darakunosono": "Illegal Paradise",
+    "dataerror": "DataErr0r",
+    "dement": "Dement ~after legend~",
+    "dreamgoeson": "Dream goes on",
+    "dreaminattraction": "Dreamin' Attraction!!",
+    "dropdead": "dropdead",
+    "espebranch": "LunarOrbit -believe in the Espebranch road-",
+    "essenceoftwilight": "Essence of Twilight",
+    "etherstrike": "Ether Strike",
+    "evoltex": "Evoltex(poppi'n mix)",
+    "fairytale": "Fairytale",
+    "fallensquare": "Fallensquare",
+    "flashback": "Flashback",
+    "flyburg": "Flyburg and Endroll",
+    "fractureray": "Fracture Ray",
+    "genesis": "Genesis",
+    "goodtek": "GOODTEK(Arcaea Edit)",
+    "grievouslady": "Grievous Lady",
+    "guardina": "guardina",
+    "halcyon": "Halcyon",
+    "hallofmirrors": "Hall of Mirrors",
+    "harutopia": "Harutopia ~Utopia of Spring~",
+    "hearditsaid": "I've heard it said",
+    "hikari": "Hikari",
+    "iconoclast": "Iconoclast",
+    "ifi": "#1f1e33",
+    "ignotus": "Ignotus",
+    "impurebird": "Impure Bird",
+    "infinityheaven": "Infinity Heaven",
+    "inkarusi": "inkar-usi",
+    "journey": "Journey",
+    "kanagawa": "Kanagawa Cyber Culvert",
+    "lethaeus": "Lethaeus",
+    "linearaccelerator": "Linear Accelerator",
+    "lostcivilization": "Lost Civilization",
+    "lucifer": "Lucifer",
+    "lumia": "Lumia",
+    "mazenine": "Maze No.9",
+    "memoryfactory": "memoryfactory.lzh",
+    "memoryforest": "Memory Forest",
+    "metallicpunisher": "Metallic Punisher",
+    "modelista": "Modelista",
+    "moonheart": "Moonheart",
+    "moonlightofsandcastle": "Moonlight of Sand Castle",
+    "nexttoyou": "next to you",
+    "nhelv": "Nhelv",
+    "nirvluce": "Nirv lucE",
+    "onelastdrive": "One Last Drive",
+    "oracle": "Oracle",
+    "paradise": "Paradise",
+    "partyvinyl": "Party Vinyl",
+    "pragmatism": "PRAGMATISM",
+    "purgatorium": "Purgatorium",
+    "qualia": "qualia -ideaesthesia-",
+    "quon": "Quon",
+    "rabbitintheblackroom": "Rabbit In The Black Room",
+    "reconstruction": "REconstruction",
+    "redandblue": "Red and Blue",
+    "reinvent": "Reinvent",
+    "relentless": "Relentless",
+    "rise": "Rise",
+    "romancewars": "Romance Wars",
+    "sayonarahatsukoi": "Sayonara Hatsukoi",
+    "shadesoflight": "Shades of Light in a Transcendent Realm",
+    "sheriruth": "Sheriruth",
+    "silentrush": "Silent Rush",
+    "singularity": "Singularity",
+    "snowwhite": "Snow White",
+    "soundwitch": "SOUNDWiTCH",
+    "specta": "Specta",
+    "stager": "STAGER(ALL STAGE CLEAR)",
+    "strongholds": "Strongholds",
+    "sulfur": "Sulfur",
+    "suomi": "Suomi",
+    "surrender": "Surrender",
+    "syro": "Syro",
+    "themessage": "The Message",
+    "tiferet": "Tiferet",
+    "trappola": "trappola bewitching",
+    "vexaria": "Vexaria",
+    "viyella": "cry of viyella",
+    "yourvoiceso": "Your voice so... feat.Such",
+    "yozakurafubuki": "Yosakura Fubuki"
+}

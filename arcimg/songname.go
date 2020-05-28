@@ -17,13 +17,9 @@ func init() {
 	if err != nil {
 		panic(err)
 	}
-	songlist := m{}
-	err = json.Unmarshal(f, &songlist)
+	err = json.Unmarshal(f, &songmap)
 	if err != nil {
 		panic(err)
-	}
-	for i := range songlist {
-		songmap[songlist[i].ID] = songlist[i].Song
 	}
 }
 
