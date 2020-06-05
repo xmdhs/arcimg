@@ -6,27 +6,35 @@ import (
 	"sync"
 )
 
+var (
+	oo sync.Once
+	o  sync.Once
+)
+
 func Anticc(m *Http) {
+	oo.Do(func() {
+		go Remove()
+	})
 	ip := m.req.Header.Get("X-Forwarded-For")
 	log.Println(ip + " | " + m.req.Header.Get("Referer"))
 	i, bb := ma.LoadOrStore(ip, 0)
 	if bb {
 		ii, _ := i.(int)
-		if ii > 20 {
-			ma.Store(ip, 30)
-		} else {
-			ma.Store(ip, ii+1)
-		}
+		ma.Store(ip, ii+1)
 	}
 	i, bb = ma.Load(ip)
 	ii, _ := i.(int)
 	if ii > 5 {
+		ma.Store(ip, 30)
 		return
 	}
 	m.Next()
 }
 
 func Log(m *Http) {
+	o.Do(func() {
+		go Logw()
+	})
 	if m.req.URL.String() != "/img.png" {
 		ip := m.req.Header.Get("X-Forwarded-For")
 		b := buffer.Get()

@@ -15,7 +15,6 @@ var (
 	ajson string
 	b     *bytes.Buffer = bytes.NewBuffer(nil)
 	ma    sync.Map
-	o     sync.Once
 )
 
 func init() {

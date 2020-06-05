@@ -10,8 +10,6 @@ import (
 )
 
 func main() {
-	go arcimg.Remove()
-	go arcimg.Logw()
 	mux := http.NewServeMux()
 	server := &http.Server{
 		Addr:         ":8080",
