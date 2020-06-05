@@ -9,14 +9,13 @@ import (
 )
 
 var (
-	atime       int64
-	btime       int64
-	mu          sync.Mutex
-	ajson       string
-	b           *bytes.Buffer = bytes.NewBuffer(nil)
-	ma          sync.Map
-	Logoutfiles bool
-	o           sync.Once
+	atime int64
+	btime int64
+	mu    sync.Mutex
+	ajson string
+	b     *bytes.Buffer = bytes.NewBuffer(nil)
+	ma    sync.Map
+	o     sync.Once
 )
 
 func init() {
@@ -27,26 +26,6 @@ func init() {
 }
 
 func Img(w http.ResponseWriter, req *http.Request) {
-	ip := req.Header.Get("X-Forwarded-For")
-	if Logoutfiles {
-		loggers <- ip + " | " + req.Header.Get("Referer")
-	} else {
-		log.Println(ip + " | " + req.Header.Get("Referer"))
-	}
-	i, bb := ma.LoadOrStore(ip, 0)
-	if bb {
-		ii, _ := i.(int)
-		if ii > 20 {
-			ma.Store(ip, 30)
-		} else {
-			ma.Store(ip, ii+1)
-		}
-	}
-	i, bb = ma.Load(ip)
-	ii, _ := i.(int)
-	if ii > 5 {
-		return
-	}
 	mu.Lock()
 	if time.Now().Unix()-atime > 600 {
 		atime = time.Now().Unix()
@@ -58,7 +37,9 @@ func Img(w http.ResponseWriter, req *http.Request) {
 		if err != nil {
 			log.Println(err)
 		} else if info.Value != nil {
-			c := bytes.NewBuffer(nil)
+			bb := buffer.Get()
+			c := bb.(*bytes.Buffer)
+			c.Reset()
 			createimg(c, &info)
 			b = c
 		}

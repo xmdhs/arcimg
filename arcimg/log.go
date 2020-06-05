@@ -7,7 +7,7 @@ import (
 )
 
 var (
-	loggers = make(chan string, 10)
+	loggers = make(chan string, 1000)
 	logger  *log.Logger
 )
 
