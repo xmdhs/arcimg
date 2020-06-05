@@ -20,7 +20,6 @@ func main() {
 	Middleware := arcimg.NewMiddleware(arcimg.Img)
 	Middleware.Add(arcimg.Anticc)
 	Middleware.Add(arcimg.Log)
-
 	mux.HandleFunc("/favicon.ico", http.NotFound)
 	mux.HandleFunc("/", Middleware.Use)
 	http2.ConfigureServer(server, &http2.Server{})
