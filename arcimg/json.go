@@ -152,6 +152,8 @@ func (a *arcinfo) SongID() string {
 		return "PRS"
 	case 2:
 		return "FTR"
+	case 3:
+		return "BYD"
 	default:
 		return ""
 	}
