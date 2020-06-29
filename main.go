@@ -1,10 +1,11 @@
 package main
 
 import (
-	"arcimg/arcimg"
 	"log"
 	"net/http"
 	"time"
+
+	"github.com/xmdhs/arcimg/arcimg"
 )
 
 func main() {

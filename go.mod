@@ -1,4 +1,4 @@
-module arcimg
+module github.com/xmdhs/arcimg
 
 go 1.14
 
