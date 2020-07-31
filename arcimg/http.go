@@ -26,11 +26,11 @@ func init() {
 }
 
 func Img(w http.ResponseWriter, req *http.Request) {
-	if time.Now().Unix()-atime > 600 {
+	if time.Now().Unix()-atomic.LoadInt64(&atime) > 600 {
 		atomic.StoreInt64(&atime, time.Now().Unix())
 		go get()
 	}
-	if time.Now().Unix()-btime > 30 {
+	if time.Now().Unix()-atomic.LoadInt64(&btime) > 30 {
 		atomic.StoreInt64(&btime, time.Now().Unix())
 		info, err := Json2(ajson.Load().(string))
 		if err != nil {
