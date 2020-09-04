@@ -53,12 +53,8 @@ func Log(m *Http) {
 	m.Next()
 }
 
-var buffer sync.Pool
-
-func init() {
-	buffer = sync.Pool{
-		New: func() interface{} {
-			return bytes.NewBuffer(nil)
-		},
-	}
+var buffer sync.Pool = sync.Pool{
+	New: func() interface{} {
+		return bytes.NewBuffer(nil)
+	},
 }
