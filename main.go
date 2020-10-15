@@ -13,15 +13,11 @@ func main() {
 	server := &http.Server{
 		Addr:         ":8080",
 		ReadTimeout:  5 * time.Second,
-		WriteTimeout: 5 * time.Second,
+		WriteTimeout: 10 * time.Second,
 		Handler:      mux,
 	}
-	Middleware := arcimg.NewMiddleware(arcimg.Img)
-	Middleware.Add(arcimg.Anticc)
-	Middleware.Add(arcimg.Log)
-
 	mux.HandleFunc("/favicon.ico", http.NotFound)
-	mux.HandleFunc("/", Middleware.Use)
+	mux.HandleFunc("/", arcimg.Anticc(arcimg.Log(arcimg.Img)))
 	log.Println(server.ListenAndServe())
 
 }

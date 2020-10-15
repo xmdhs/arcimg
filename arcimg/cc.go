@@ -3,6 +3,8 @@ package arcimg
 import (
 	"bytes"
 	"log"
+	"net/http"
+	"net/url"
 	"sync"
 )
 
@@ -11,46 +13,56 @@ var (
 	o  sync.Once
 )
 
-func Anticc(m *Http) {
+func Anticc(f http.HandlerFunc) http.HandlerFunc {
 	oo.Do(func() {
 		go Remove()
 	})
-	ip := m.req.Header.Get("X-Forwarded-For")
-	log.Println(ip + " | " + m.req.Header.Get("Referer"))
-	i, bb := ma.LoadOrStore(ip, 0)
-	if bb {
+	return func(w http.ResponseWriter, r *http.Request) {
+		ip := r.Header.Get("X-Forwarded-For")
+		log.Println(ip + " | " + r.Header.Get("Referer"))
+		i, bb := ma.LoadOrStore(ip, 0)
+		if bb {
+			ii, _ := i.(int)
+			ma.Store(ip, ii+1)
+		}
+		i, bb = ma.Load(ip)
 		ii, _ := i.(int)
-		ma.Store(ip, ii+1)
+		if ii > 5 {
+			ma.Store(ip, 30)
+			return
+		}
+		f(w, r)
 	}
-	i, bb = ma.Load(ip)
-	ii, _ := i.(int)
-	if ii > 5 {
-		ma.Store(ip, 30)
-		return
-	}
-	m.Next()
 }
 
-func Log(m *Http) {
+func Log(f http.HandlerFunc) http.HandlerFunc {
 	o.Do(func() {
 		go Logw()
 	})
-	if m.req.URL.String() != "/img.png" {
-		ip := m.req.Header.Get("X-Forwarded-For")
-		b := buffer.Get()
-		bb := b.(*bytes.Buffer)
-		bb.Reset()
-		for key, v := range m.req.Header {
-			bb.WriteString(key + ": ")
-			for _, v := range v {
-				bb.WriteString(v)
-			}
-			bb.WriteString(" ")
+	return func(w http.ResponseWriter, r *http.Request) {
+		u, err := url.Parse(r.Referer())
+		var host string
+		if err == nil {
+			host = u.Hostname()
 		}
-		loggers <- ip + " | " + bb.String() + " | " + m.req.URL.String()
-		buffer.Put(bb)
+
+		if r.URL.String() != "/img.png" || host != "www.mcbbs.net" {
+			ip := r.Header.Get("X-Forwarded-For")
+			b := buffer.Get()
+			bb := b.(*bytes.Buffer)
+			bb.Reset()
+			for key, v := range r.Header {
+				bb.WriteString(key + ": ")
+				for _, v := range v {
+					bb.WriteString(v)
+				}
+				bb.WriteString(" ")
+			}
+			loggers <- ip + " | " + bb.String() + " | " + r.URL.String()
+			buffer.Put(bb)
+		}
+		f(w, r)
 	}
-	m.Next()
 }
 
 var buffer sync.Pool = sync.Pool{
