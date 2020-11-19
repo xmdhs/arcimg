@@ -17,7 +17,7 @@ func main() {
 		Handler:      mux,
 	}
 	mux.HandleFunc("/favicon.ico", http.NotFound)
-	mux.HandleFunc("/", arcimg.Anticc(arcimg.Log(arcimg.Img)))
+	mux.HandleFunc("/", arcimg.Chain(arcimg.Img, arcimg.Anticc, arcimg.Log))
 	log.Println(server.ListenAndServe())
 
 }

@@ -70,3 +70,12 @@ var buffer sync.Pool = sync.Pool{
 		return bytes.NewBuffer(nil)
 	},
 }
+
+type Middleware func(http.HandlerFunc) http.HandlerFunc
+
+func Chain(f http.HandlerFunc, middlewares ...Middleware) http.HandlerFunc {
+	for _, v := range middlewares {
+		f = v(f)
+	}
+	return f
+}
