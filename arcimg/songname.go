@@ -36,6 +36,9 @@ func getdifficutie(id string, i int) string {
 	if !ok {
 		return ""
 	}
+	if len(r.Difficulties) <= i {
+		return ""
+	}
 	return r.Difficulties[i]
 
 }
