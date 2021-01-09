@@ -32,7 +32,7 @@ func Img(w http.ResponseWriter, req *http.Request) {
 	}
 	boldtime := atomic.LoadInt64(&btime)
 	if time.Now().Unix()-boldtime > 30 && atomic.CompareAndSwapInt64(&btime, boldtime, time.Now().Unix()) {
-		info, err := Json2(ajson.Load().([]byte))
+		info, err := json2(ajson.Load().([]byte))
 		if err != nil {
 			log.Println(err)
 		} else if info.Value != nil {

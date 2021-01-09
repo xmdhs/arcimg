@@ -6,7 +6,7 @@ import (
 )
 
 func TestJson2(t *testing.T) {
-	a, err := Json2(ajson.Load().([]byte))
+	a, err := json2(ajson.Load().([]byte))
 	if err != nil {
 		t.Fatal(err)
 	}
