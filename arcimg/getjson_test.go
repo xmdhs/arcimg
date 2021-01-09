@@ -13,6 +13,6 @@ func TestGetjson(t *testing.T) {
 }
 
 func TestGet(t *testing.T) {
-	a := ajson.Load().(string)
-	fmt.Println(a)
+	a := ajson.Load().([]byte)
+	fmt.Println(string(a))
 }

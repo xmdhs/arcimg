@@ -1,5 +1,3 @@
-// +build main
-
 package main
 
 import (

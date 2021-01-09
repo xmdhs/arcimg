@@ -20,7 +20,7 @@ var (
 
 func init() {
 	get()
-	if ajson.Load().(string) == "" {
+	if ajson.Load().([]byte) == nil {
 		log.Fatalln("Can not get json")
 	}
 }
@@ -32,7 +32,7 @@ func Img(w http.ResponseWriter, req *http.Request) {
 	}
 	boldtime := atomic.LoadInt64(&btime)
 	if time.Now().Unix()-boldtime > 30 && atomic.CompareAndSwapInt64(&btime, boldtime, time.Now().Unix()) {
-		info, err := Json2(ajson.Load().(string))
+		info, err := Json2(ajson.Load().([]byte))
 		if err != nil {
 			log.Println(err)
 		} else if info.Value != nil {

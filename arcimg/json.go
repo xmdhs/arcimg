@@ -41,9 +41,9 @@ type recentscore struct {
 	TimePlayed        int     `json:"time_played"`
 }
 
-func Json2(jsonn string) (arcinfo, error) {
+func Json2(jsonn []byte) (arcinfo, error) {
 	var arc arcinfo
-	if err := json.Unmarshal([]byte(jsonn), &arc); err != nil {
+	if err := json.Unmarshal(jsonn, &arc); err != nil {
 		log.Println(err)
 		return arc, err
 	}
