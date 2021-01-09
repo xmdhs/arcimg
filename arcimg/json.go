@@ -145,15 +145,16 @@ func (a *arcinfo) PTT() string {
 
 func (a *arcinfo) SongID() string {
 	Difficulty := a.Value[0].Avalue.Friends[0].Recentscore[0].Difficulty
+	id := a.Value[0].Avalue.Friends[0].Recentscore[0].SongID
 	switch Difficulty {
 	case 0:
-		return "PST"
+		return "PST" + getdifficutie(id, Difficulty)
 	case 1:
-		return "PRS"
+		return "PRS" + getdifficutie(id, Difficulty)
 	case 2:
-		return "FTR"
+		return "FTR" + getdifficutie(id, Difficulty)
 	case 3:
-		return "BYD"
+		return "BYD" + getdifficutie(id, Difficulty)
 	default:
 		return ""
 	}

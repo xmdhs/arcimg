@@ -61,14 +61,16 @@ func createimg(w io.Writer, info *arcinfo) {
 	pt := freetype.Pt(460, 105) // 字出现的位置
 	_, err := c.DrawString(info.Value[0].Avalue.Friends[0].Name, pt)
 
+	songname := getsongname(info.Value[0].Avalue.Friends[0].Recentscore[0].SongID)
+
 	pt = freetype.Pt(84, 68)
-	if len(getsongname(info.Value[0].Avalue.Friends[0].Recentscore[0].SongID)) > 15 {
+	if len(songname) > 15 {
 		pt = freetype.Pt(50, 68)
-		if len(getsongname(info.Value[0].Avalue.Friends[0].Recentscore[0].SongID)) > 20 {
+		if len(songname) > 20 {
 			pt = freetype.Pt(10, 68)
 		}
 	}
-	_, err = c.DrawString(getsongname(info.Value[0].Avalue.Friends[0].Recentscore[0].SongID)+"("+info.SongID()+")", pt)
+	_, err = c.DrawString(songname+"("+info.SongID()+")", pt)
 
 	pt = freetype.Pt(84, 95)
 	_, err = c.DrawString(strconv.Itoa(info.Value[0].Avalue.Friends[0].Recentscore[0].Score), pt)

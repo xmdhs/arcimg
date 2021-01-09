@@ -10,7 +10,7 @@ type m []struct {
 	Song string `json:"song"`
 }
 
-var songmap map[string]string = make(map[string]string)
+var songmap = make(map[string]songdata)
 
 func init() {
 	f, err := ioutil.ReadFile("./songname.json")
@@ -28,5 +28,19 @@ func getsongname(id string) string {
 	if !ok {
 		return id
 	}
-	return name
+	return name.Name
+}
+
+func getdifficutie(id string, i int) string {
+	r, ok := songmap[id]
+	if !ok {
+		return ""
+	}
+	return r.Difficulties[i]
+
+}
+
+type songdata struct {
+	Name         string
+	Difficulties []string
 }

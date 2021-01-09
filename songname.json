@@ -1,133 +1,1603 @@
 {
-    "alexandrite": "Alexandrite",
-    "alicealamode": "Alice à la mode",
-    "alicessuitcase": "Alice's Suitcase",
-    "anokumene": "Anokumene",
-    "antagonism": "Antagonism",
-    "arcahv": "Arcahv",
-    "aterlbus": "aterlbus",
-    "auxesia": "Auxesia",
-    "axiumcrisis": "Axium Crisis",
-    "babaroque": "Babaroque",
-    "besideyou": "Beside You",
-    "bethere": "Be There",
-    "blacklotus": "Black Lotus",
-    "blaster": "Blaster",
-    "blossoms": "Blossoms",
-    "bookmaker": "Bookmaker(2D Version)",
-    "brandnewworld": "Brand new world",
-    "buchigireberserker": "BUCHiGiRE Berserker",
-    "callmyname": "Call My Name feat.Yukacco",
-    "carminescythe": "carmine:scythe",
-    "chronostasis": "Chronostasis",
-    "clotho": "Clotho and the stargazer",
-    "conflict": "conflict",
-    "crossover": "CROSS†OVER",
-    "crosssoul": "CROSS+SOUL",
-    "cyanine": "cyanine",
-    "cyberneciacatharsis": "Cybernecia Catharsis",
-    "dantalion": "Dantalion",
-    "darakunosono": "Illegal Paradise",
-    "dataerror": "DataErr0r",
-    "dement": "Dement ~after legend~",
-    "diode": "Diode",
-    "dreamgoeson": "Dream goes on",
-    "dreaminattraction": "Dreamin' Attraction!!",
-    "dropdead": "dropdead",
-    "eccentrictale": "Eccentric Tale",
-    "empireofwinter": "Empire of Winter",
-    "equilibrium": "Equilibrium",
-    "espebranch": "LunarOrbit -believe in the Espebranch road-",
-    "essenceoftwilight": "Essence of Twilight",
-    "etherstrike": "Ether Strike",
-    "evoltex": "Evoltex(poppi'n mix)",
-    "faintlight": "Faint Light",
-    "fairytale": "Fairytale",
-    "fallensquare": "Fallensquare",
-    "felis": "Felis",
-    "flashback": "Flashback",
-    "flyburg": "Flyburg and Endroll",
-    "fractureray": "Fracture Ray",
-    "gekka": "Gekka (Short Version)",
-    "genesis": "Genesis",
-    "givemeanightmare": "Give Me a Nightmare",
-    "goodtek": "GOODTEK(Arcaea Edit)",
-    "grievouslady": "Grievous Lady",
-    "guardina": "guardina",
-    "halcyon": "Halcyon",
-    "hallofmirrors": "Hall of Mirrors",
-    "harutopia": "Harutopia ~Utopia of Spring~",
-    "hearditsaid": "I've heard it said",
-    "hikari": "Hikari",
-    "iconoclast": "Iconoclast",
-    "ifi": "#1f1e33",
-    "ignotus": "Ignotus",
-    "impurebird": "Impure Bird",
-    "infinityheaven": "Infinity Heaven",
-    "inkarusi": "inkar-usi",
-    "izana": "IZANA",
-    "journey": "Journey",
-    "jump": "Jump",
-    "kanagawa": "Kanagawa Cyber Culvert",
-    "lethaeus": "Lethaeus",
-    "linearaccelerator": "Linear Accelerator",
-    "lostcivilization": "Lost Civilization",
-    "lucifer": "Lucifer",
-    "lumia": "Lumia",
-    "mazenine": "Maze No.9",
-    "memoryfactory": "memoryfactory.lzh",
-    "memoryforest": "Memory Forest",
-    "merlin": "MERLIN",
-    "metallicpunisher": "Metallic Punisher",
-    "modelista": "Modelista",
-    "moonheart": "Moonheart",
-    "moonlightofsandcastle": "Moonlight of Sand Castle",
-    "nexttoyou": "next to you",
-    "nhelv": "Nhelv",
-    "nirvluce": "Nirv lucE",
-    "oblivia": "Oblivia",
-    "omegafour": "ω4",
-    "onefr": "1F√",
-    "onelastdrive": "One Last Drive",
-    "oracle": "Oracle",
-    "paradise": "Paradise",
-    "partyvinyl": "Party Vinyl",
-    "pragmatism": "PRAGMATISM",
-    "purgatorium": "Purgatorium",
-    "qualia": "qualia -ideaesthesia-",
-    "quon": "Quon",
-    "rabbitintheblackroom": "Rabbit In The Black Room",
-    "reconstruction": "REconstruction",
-    "redandblue": "Red and Blue",
-    "reinvent": "Reinvent",
-    "relentless": "Relentless",
-    "ringedgenesis": "Ringed Genesis",
-    "rise": "Rise",
-    "romancewars": "Romance Wars",
-    "sayonarahatsukoi": "Sayonara Hatsukoi",
-    "scarletcage": "Scarlet Cage",
-    "shadesoflight": "Shades of Light in a Transcendent Realm",
-    "sheriruth": "Sheriruth",
-    "silentrush": "Silent Rush",
-    "singularity": "Singularity",
-    "snowwhite": "Snow White",
-    "soundwitch": "SOUNDWiTCH",
-    "specta": "Specta",
-    "stager": "STAGER(ALL STAGE CLEAR)",
-    "strongholds": "Strongholds",
-    "sulfur": "Sulfur",
-    "suomi": "Suomi",
-    "surrender": "Surrender",
-    "syro": "Syro",
-    "tempestissimo": "Tempestissimo",
-    "teriqma": "Teriqma",
-    "themessage": "The Message",
-    "tiferet": "Tiferet",
-    "trappola": "trappola bewitching",
-    "vexaria": "Vexaria",
-    "vividtheory": "Vivid Theory",
-    "viyella": "cry of viyella",
-    "worldexecuteme": "world.execute(me);",
-    "yourvoiceso": "Your voice so... feat.Such",
-    "yozakurafubuki": "Yosakura Fubuki"
+    "aiueoon": {
+        "Name": "AI[UE]OON",
+        "Difficulties": [
+            "3",
+            "6",
+            "9"
+        ]
+    },
+    "alexandrite": {
+        "Name": "Alexandrite",
+        "Difficulties": [
+            "4",
+            "7",
+            "10"
+        ]
+    },
+    "alicealamode": {
+        "Name": "Alice à la mode",
+        "Difficulties": [
+            "2",
+            "6",
+            "9"
+        ]
+    },
+    "alicessuitcase": {
+        "Name": "Alice's Suitcase",
+        "Difficulties": [
+            "3",
+            "6",
+            "9"
+        ]
+    },
+    "altale": {
+        "Name": "Altale",
+        "Difficulties": [
+            "2",
+            "5",
+            "9+"
+        ]
+    },
+    "amazingmightyyyy": {
+        "Name": "AMAZING MIGHTYYYY!!!!",
+        "Difficulties": [
+            "4",
+            "7",
+            "10+"
+        ]
+    },
+    "amygdata": {
+        "Name": "amygdata",
+        "Difficulties": [
+            "4",
+            "7",
+            "9"
+        ]
+    },
+    "anokumene": {
+        "Name": "Anökumene",
+        "Difficulties": [
+            "2",
+            "6",
+            "9"
+        ]
+    },
+    "antagonism": {
+        "Name": "Antagonism",
+        "Difficulties": [
+            "4",
+            "7",
+            "9+"
+        ]
+    },
+    "antithese": {
+        "Name": "Antithese",
+        "Difficulties": [
+            "2",
+            "5",
+            "8"
+        ]
+    },
+    "aprilshowers": {
+        "Name": "April showers",
+        "Difficulties": [
+            "2",
+            "5",
+            "8"
+        ]
+    },
+    "arcahv": {
+        "Name": "Arcahv",
+        "Difficulties": [
+            "4",
+            "7",
+            "9+"
+        ]
+    },
+    "astraltale": {
+        "Name": "Astral tale",
+        "Difficulties": [
+            "4",
+            "7",
+            "9"
+        ]
+    },
+    "aterlbus": {
+        "Name": "αterlβus",
+        "Difficulties": [
+            "4",
+            "7",
+            "10"
+        ]
+    },
+    "auxesia": {
+        "Name": "Auxesia",
+        "Difficulties": [
+            "3",
+            "6",
+            "9"
+        ]
+    },
+    "avantraze": {
+        "Name": "Avant Raze",
+        "Difficulties": [
+            "3",
+            "6",
+            "9"
+        ]
+    },
+    "axiumcrisis": {
+        "Name": "Axium Crisis",
+        "Difficulties": [
+            "5",
+            "8",
+            "10+"
+        ]
+    },
+    "babaroque": {
+        "Name": "Babaroque",
+        "Difficulties": [
+            "3",
+            "6",
+            "8"
+        ]
+    },
+    "badtek": {
+        "Name": "BADTEK",
+        "Difficulties": [
+            "4",
+            "7",
+            "9+"
+        ]
+    },
+    "battlenoone": {
+        "Name": "BATTLE NO.1",
+        "Difficulties": [
+            "3",
+            "6",
+            "9+"
+        ]
+    },
+    "besideyou": {
+        "Name": "Beside You",
+        "Difficulties": [
+            "2",
+            "6",
+            "8"
+        ]
+    },
+    "bethere": {
+        "Name": "Be There",
+        "Difficulties": [
+            "4",
+            "7",
+            "9"
+        ]
+    },
+    "blacklotus": {
+        "Name": "Black Lotus",
+        "Difficulties": [
+            "3",
+            "6",
+            "9+"
+        ]
+    },
+    "blackterritory": {
+        "Name": "Black Territory",
+        "Difficulties": [
+            "3",
+            "7",
+            "9+"
+        ]
+    },
+    "blaster": {
+        "Name": "Blaster",
+        "Difficulties": [
+            "4",
+            "7",
+            "9"
+        ]
+    },
+    "blossoms": {
+        "Name": "Blossoms",
+        "Difficulties": [
+            "1",
+            "4",
+            "7"
+        ]
+    },
+    "blrink": {
+        "Name": "BLRINK",
+        "Difficulties": [
+            "3",
+            "7",
+            "9+"
+        ]
+    },
+    "bookmaker": {
+        "Name": "Bookmaker (2D Version)",
+        "Difficulties": [
+            "4",
+            "6",
+            "8"
+        ]
+    },
+    "brandnewworld": {
+        "Name": "Brand new world",
+        "Difficulties": [
+            "2",
+            "4",
+            "7"
+        ]
+    },
+    "buchigireberserker": {
+        "Name": "BUCHiGiRE Berserker",
+        "Difficulties": [
+            "5",
+            "8",
+            "10+"
+        ]
+    },
+    "callmyname": {
+        "Name": "Call My Name feat. Yukacco",
+        "Difficulties": [
+            "3",
+            "6",
+            "8"
+        ]
+    },
+    "carminescythe": {
+        "Name": "carmine:scythe",
+        "Difficulties": [
+            "4",
+            "7",
+            "9"
+        ]
+    },
+    "chelsea": {
+        "Name": "Chelsea",
+        "Difficulties": [
+            "3",
+            "6",
+            "8"
+        ]
+    },
+    "chronostasis": {
+        "Name": "Chronostasis",
+        "Difficulties": [
+            "3",
+            "7",
+            "9"
+        ]
+    },
+    "clotho": {
+        "Name": "Clotho and the stargazer",
+        "Difficulties": [
+            "2",
+            "5",
+            "7"
+        ]
+    },
+    "conflict": {
+        "Name": "conflict",
+        "Difficulties": [
+            "4",
+            "7",
+            "10"
+        ]
+    },
+    "corpssansorganes": {
+        "Name": "corps-sans-organes",
+        "Difficulties": [
+            "4",
+            "7",
+            "10"
+        ]
+    },
+    "corruption": {
+        "Name": "Corruption",
+        "Difficulties": [
+            "3",
+            "6",
+            "9+"
+        ]
+    },
+    "crossover": {
+        "Name": "CROSS†OVER",
+        "Difficulties": [
+            "4",
+            "6",
+            "9"
+        ]
+    },
+    "crosssoul": {
+        "Name": "CROSS†SOUL",
+        "Difficulties": [
+            "4",
+            "7",
+            "9"
+        ]
+    },
+    "cyaegha": {
+        "Name": "Cyaegha",
+        "Difficulties": [
+            "5",
+            "8",
+            "10+"
+        ]
+    },
+    "cyanine": {
+        "Name": "cyanine",
+        "Difficulties": [
+            "4",
+            "7",
+            "10"
+        ]
+    },
+    "cyberneciacatharsis": {
+        "Name": "Cybernecia Catharsis",
+        "Difficulties": [
+            "4",
+            "7",
+            "9"
+        ]
+    },
+    "dandelion": {
+        "Name": "Dandelion",
+        "Difficulties": [
+            "2",
+            "6",
+            "8"
+        ]
+    },
+    "dantalion": {
+        "Name": "Dantalion",
+        "Difficulties": [
+            "5",
+            "8",
+            "10+"
+        ]
+    },
+    "darakunosono": {
+        "Name": "Illegal Paradise",
+        "Difficulties": [
+            "2",
+            "7",
+            "9"
+        ]
+    },
+    "dataerror": {
+        "Name": "DataErr0r",
+        "Difficulties": [
+            "3",
+            "7",
+            "9"
+        ]
+    },
+    "dazzlehop": {
+        "Name": "Dazzle hop",
+        "Difficulties": [
+            "3",
+            "6",
+            "9+"
+        ]
+    },
+    "dement": {
+        "Name": "Dement ~after legend~",
+        "Difficulties": [
+            "3",
+            "6",
+            "7",
+            "9+"
+        ]
+    },
+    "diode": {
+        "Name": "Diode",
+        "Difficulties": [
+            "2",
+            "5",
+            "8"
+        ]
+    },
+    "dottodot": {
+        "Name": "Dot to Dot feat. shully",
+        "Difficulties": [
+            "3",
+            "6",
+            "8"
+        ]
+    },
+    "dreadnought": {
+        "Name": "Dreadnought",
+        "Difficulties": [
+            "4",
+            "7",
+            "9+"
+        ]
+    },
+    "dreamgoeson": {
+        "Name": "Dream goes on",
+        "Difficulties": [
+            "1",
+            "5",
+            "7"
+        ]
+    },
+    "dreaminattraction": {
+        "Name": "Dreamin' Attraction!!",
+        "Difficulties": [
+            "4",
+            "7",
+            "9"
+        ]
+    },
+    "dropdead": {
+        "Name": "dropdead",
+        "Difficulties": [
+            "1",
+            "9",
+            "8"
+        ]
+    },
+    "dxfullmetal": {
+        "Name": "DX Choseinou Full Metal Shojo",
+        "Difficulties": [
+            "3",
+            "6",
+            "9+"
+        ]
+    },
+    "eccentrictale": {
+        "Name": "Eccentric Tale",
+        "Difficulties": [
+            "2",
+            "5",
+            "8"
+        ]
+    },
+    "einherjar": {
+        "Name": "Einherjar Joker",
+        "Difficulties": [
+            "4",
+            "7",
+            "9+"
+        ]
+    },
+    "empireofwinter": {
+        "Name": "Empire of Winter",
+        "Difficulties": [
+            "3",
+            "6",
+            "9"
+        ]
+    },
+    "equilibrium": {
+        "Name": "Equilibrium",
+        "Difficulties": [
+            "3",
+            "6",
+            "9"
+        ]
+    },
+    "espebranch": {
+        "Name": "LunarOrbit -believe in the Espebranch road-",
+        "Difficulties": [
+            "3",
+            "6",
+            "9"
+        ]
+    },
+    "essenceoftwilight": {
+        "Name": "Essence of Twilight",
+        "Difficulties": [
+            "4",
+            "7",
+            "9"
+        ]
+    },
+    "etherstrike": {
+        "Name": "Ether Strike",
+        "Difficulties": [
+            "5",
+            "8",
+            "10"
+        ]
+    },
+    "evoltex": {
+        "Name": "Evoltex (poppi'n mix)",
+        "Difficulties": [
+            "2",
+            "7",
+            "8"
+        ]
+    },
+    "faintlight": {
+        "Name": "Faint Light (Arcaea Edit)",
+        "Difficulties": [
+            "3",
+            "6",
+            "9"
+        ]
+    },
+    "fairytale": {
+        "Name": "Fairytale",
+        "Difficulties": [
+            "1",
+            "3",
+            "7",
+            "9"
+        ]
+    },
+    "fallensquare": {
+        "Name": "Fallensquare",
+        "Difficulties": [
+            "3",
+            "7",
+            "9"
+        ]
+    },
+    "feelssoright": {
+        "Name": "Feels So Right feat. Renko",
+        "Difficulties": [
+            "3",
+            "6",
+            "9"
+        ]
+    },
+    "felis": {
+        "Name": "Felis",
+        "Difficulties": [
+            "4",
+            "7",
+            "10"
+        ]
+    },
+    "filament": {
+        "Name": "Filament",
+        "Difficulties": [
+            "4",
+            "7",
+            "9+"
+        ]
+    },
+    "flashback": {
+        "Name": "Flashback",
+        "Difficulties": [
+            "2",
+            "5",
+            "8"
+        ]
+    },
+    "flyburg": {
+        "Name": "Flyburg and Endroll",
+        "Difficulties": [
+            "3",
+            "6",
+            "9"
+        ]
+    },
+    "fractureray": {
+        "Name": "Fracture Ray",
+        "Difficulties": [
+            "6",
+            "9",
+            "11"
+        ]
+    },
+    "freefall": {
+        "Name": "FREEF4LL",
+        "Difficulties": [
+            "4",
+            "7",
+            "8"
+        ]
+    },
+    "galaxyfriends": {
+        "Name": "Galaxy Friends",
+        "Difficulties": [
+            "3",
+            "6",
+            "9+"
+        ]
+    },
+    "garakuta": {
+        "Name": "Garakuta Doll Play",
+        "Difficulties": [
+            "4",
+            "6",
+            "10"
+        ]
+    },
+    "gekka": {
+        "Name": "Gekka (Short Version)",
+        "Difficulties": [
+            "4",
+            "6",
+            "8"
+        ]
+    },
+    "genesis": {
+        "Name": "Genesis",
+        "Difficulties": [
+            "2",
+            "5",
+            "8"
+        ]
+    },
+    "givemeanightmare": {
+        "Name": "Give Me a Nightmare",
+        "Difficulties": [
+            "3",
+            "5",
+            "9"
+        ]
+    },
+    "gloryroad": {
+        "Name": "GLORY：ROAD",
+        "Difficulties": [
+            "4",
+            "7",
+            "10"
+        ]
+    },
+    "goodtek": {
+        "Name": "GOODTEK (Arcaea Edit)",
+        "Difficulties": [
+            "4",
+            "6",
+            "9",
+            "9+"
+        ]
+    },
+    "gothiveofra": {
+        "Name": "Got hive of Ra",
+        "Difficulties": [
+            "3",
+            "6",
+            "9+"
+        ]
+    },
+    "grievouslady": {
+        "Name": "Grievous Lady",
+        "Difficulties": [
+            "6",
+            "9",
+            "11"
+        ]
+    },
+    "grimheart": {
+        "Name": "Grimheart",
+        "Difficulties": [
+            "2",
+            "5",
+            "8"
+        ]
+    },
+    "guardina": {
+        "Name": "γuarδina",
+        "Difficulties": [
+            "4",
+            "7",
+            "10"
+        ]
+    },
+    "halcyon": {
+        "Name": "Halcyon",
+        "Difficulties": [
+            "5",
+            "8",
+            "10+"
+        ]
+    },
+    "hallofmirrors": {
+        "Name": "Hall of Mirrors",
+        "Difficulties": [
+            "3",
+            "5",
+            "8"
+        ]
+    },
+    "harutopia": {
+        "Name": "Harutopia ~Utopia of Spring~",
+        "Difficulties": [
+            "1",
+            "4",
+            "8"
+        ]
+    },
+    "hearditsaid": {
+        "Name": "I've heard it said",
+        "Difficulties": [
+            "3",
+            "6",
+            "8"
+        ]
+    },
+    "heartjackin": {
+        "Name": "Heart Jackin'",
+        "Difficulties": [
+            "3",
+            "5",
+            "9+"
+        ]
+    },
+    "heavenlycaress": {
+        "Name": "Heavenly caress",
+        "Difficulties": [
+            "3",
+            "7",
+            "9+"
+        ]
+    },
+    "heavensdoor": {
+        "Name": "Heavensdoor",
+        "Difficulties": [
+            "4",
+            "7",
+            "9+"
+        ]
+    },
+    "hikari": {
+        "Name": "Hikari",
+        "Difficulties": [
+            "2",
+            "6",
+            "8"
+        ]
+    },
+    "iconoclast": {
+        "Name": "Iconoclast",
+        "Difficulties": [
+            "4",
+            "7",
+            "9"
+        ]
+    },
+    "ifi": {
+        "Name": "#1f1e33",
+        "Difficulties": [
+            "5",
+            "9",
+            "10+"
+        ]
+    },
+    "ignotus": {
+        "Name": "Ignotus",
+        "Difficulties": [
+            "3",
+            "6",
+            "9"
+        ]
+    },
+    "ikazuchi": {
+        "Name": "Ikazuchi",
+        "Difficulties": [
+            "3",
+            "7",
+            "10"
+        ]
+    },
+    "impurebird": {
+        "Name": "Impure Bird",
+        "Difficulties": [
+            "2",
+            "5",
+            "9"
+        ]
+    },
+    "infinityheaven": {
+        "Name": "Infinity Heaven",
+        "Difficulties": [
+            "1",
+            "5",
+            "7",
+            "9"
+        ]
+    },
+    "inkarusi": {
+        "Name": "inkar-usi",
+        "Difficulties": [
+            "2",
+            "4",
+            "7"
+        ]
+    },
+    "izana": {
+        "Name": "IZANA",
+        "Difficulties": [
+            "5",
+            "8",
+            "10"
+        ]
+    },
+    "journey": {
+        "Name": "Journey",
+        "Difficulties": [
+            "3",
+            "6",
+            "8"
+        ]
+    },
+    "jump": {
+        "Name": "Jump",
+        "Difficulties": [
+            "4",
+            "6",
+            "9"
+        ]
+    },
+    "kanagawa": {
+        "Name": "Kanagawa Cyber Culvert",
+        "Difficulties": [
+            "1",
+            "5",
+            "9"
+        ]
+    },
+    "lapis": {
+        "Name": "Lapis",
+        "Difficulties": [
+            "2",
+            "6",
+            "9"
+        ]
+    },
+    "laqryma": {
+        "Name": "La'qryma of the Wasteland",
+        "Difficulties": [
+            "3",
+            "6",
+            "9"
+        ]
+    },
+    "lazyaddiction": {
+        "Name": "Lazy Addiction",
+        "Difficulties": [
+            "2",
+            "6",
+            "9"
+        ]
+    },
+    "lethaeus": {
+        "Name": "Lethaeus",
+        "Difficulties": [
+            "3",
+            "6",
+            "9+"
+        ]
+    },
+    "libertas": {
+        "Name": "Libertas",
+        "Difficulties": [
+            "3",
+            "5",
+            "9"
+        ]
+    },
+    "linearaccelerator": {
+        "Name": "Linear Accelerator",
+        "Difficulties": [
+            "2",
+            "6",
+            "9+"
+        ]
+    },
+    "lostcivilization": {
+        "Name": "Lost Civilization",
+        "Difficulties": [
+            "4",
+            "7",
+            "9"
+        ]
+    },
+    "lostdesire": {
+        "Name": "Lost Desire",
+        "Difficulties": [
+            "4",
+            "7",
+            "9+"
+        ]
+    },
+    "lucifer": {
+        "Name": "Lucifer",
+        "Difficulties": [
+            "3",
+            "5",
+            "8"
+        ]
+    },
+    "lumia": {
+        "Name": "Lumia",
+        "Difficulties": [
+            "2",
+            "5",
+            "8",
+            "9"
+        ]
+    },
+    "mahoroba": {
+        "Name": "MAHOROBA",
+        "Difficulties": [
+            "3",
+            "6",
+            "9"
+        ]
+    },
+    "maliciousmischance": {
+        "Name": "Malicious Mischance",
+        "Difficulties": [
+            "4",
+            "7",
+            "10"
+        ]
+    },
+    "mazenine": {
+        "Name": "Maze No.9",
+        "Difficulties": [
+            "3",
+            "3",
+            "8"
+        ]
+    },
+    "melodyoflove": {
+        "Name": "A Wandering Melody of Love",
+        "Difficulties": [
+            "3",
+            "7",
+            "9+"
+        ]
+    },
+    "memoryfactory": {
+        "Name": "memoryfactory.lzh",
+        "Difficulties": [
+            "2",
+            "5",
+            "8"
+        ]
+    },
+    "memoryforest": {
+        "Name": "Memory Forest",
+        "Difficulties": [
+            "3",
+            "6",
+            "9+"
+        ]
+    },
+    "merlin": {
+        "Name": "MERLIN",
+        "Difficulties": [
+            "3",
+            "5",
+            "8"
+        ]
+    },
+    "metallicpunisher": {
+        "Name": "Metallic Punisher",
+        "Difficulties": [
+            "3",
+            "7",
+            "10"
+        ]
+    },
+    "mirzam": {
+        "Name": "Mirzam",
+        "Difficulties": [
+            "4",
+            "7",
+            "10"
+        ]
+    },
+    "modelista": {
+        "Name": "Modelista",
+        "Difficulties": [
+            "3",
+            "7",
+            "10"
+        ]
+    },
+    "monochromeprincess": {
+        "Name": "Monochrome Princess",
+        "Difficulties": [
+            "4",
+            "7",
+            "9"
+        ]
+    },
+    "moonheart": {
+        "Name": "Moonheart",
+        "Difficulties": [
+            "2",
+            "5",
+            "8",
+            "9+"
+        ]
+    },
+    "moonlightofsandcastle": {
+        "Name": "Moonlight of Sand Castle",
+        "Difficulties": [
+            "1",
+            "5",
+            "7"
+        ]
+    },
+    "nexttoyou": {
+        "Name": "next to you",
+        "Difficulties": [
+            "4",
+            "7",
+            "8"
+        ]
+    },
+    "nhelv": {
+        "Name": "Nhelv",
+        "Difficulties": [
+            "3",
+            "6",
+            "9+"
+        ]
+    },
+    "nirvluce": {
+        "Name": "Nirv lucE",
+        "Difficulties": [
+            "2",
+            "7",
+            "10"
+        ]
+    },
+    "oblivia": {
+        "Name": "Oblivia",
+        "Difficulties": [
+            "3",
+            "5",
+            "8"
+        ]
+    },
+    "omakeno": {
+        "Name": "OMAKENO Stroke",
+        "Difficulties": [
+            "3",
+            "6",
+            "9"
+        ]
+    },
+    "omegafour": {
+        "Name": "ω4",
+        "Difficulties": [
+            "3",
+            "7",
+            "10+"
+        ]
+    },
+    "onefr": {
+        "Name": "1F√",
+        "Difficulties": [
+            "2",
+            "6",
+            "8"
+        ]
+    },
+    "onelastdrive": {
+        "Name": "One Last Drive",
+        "Difficulties": [
+            "2",
+            "5",
+            "8"
+        ]
+    },
+    "oracle": {
+        "Name": "Oracle",
+        "Difficulties": [
+            "3",
+            "5",
+            "9"
+        ]
+    },
+    "oshamascramble": {
+        "Name": "Oshama Scramble!",
+        "Difficulties": [
+            "3",
+            "6",
+            "10"
+        ]
+    },
+    "ouroboros": {
+        "Name": "ouroboros -twin stroke of the end-",
+        "Difficulties": [
+            "4",
+            "7",
+            "10+"
+        ]
+    },
+    "paradise": {
+        "Name": "Paradise",
+        "Difficulties": [
+            "1",
+            "4",
+            "7"
+        ]
+    },
+    "particlearts": {
+        "Name": "Particle Arts",
+        "Difficulties": [
+            "3",
+            "6",
+            "8"
+        ]
+    },
+    "partyvinyl": {
+        "Name": "Party Vinyl",
+        "Difficulties": [
+            "4",
+            "7",
+            "9"
+        ]
+    },
+    "phantasia": {
+        "Name": "Phantasia",
+        "Difficulties": [
+            "4",
+            "5",
+            "9"
+        ]
+    },
+    "pragmatism": {
+        "Name": "PRAGMATISM",
+        "Difficulties": [
+            "4",
+            "8",
+            "10"
+        ]
+    },
+    "purgatorium": {
+        "Name": "Purgatorium",
+        "Difficulties": [
+            "2",
+            "6",
+            "8",
+            "9"
+        ]
+    },
+    "purpleverse": {
+        "Name": "Purple Verse",
+        "Difficulties": [
+            "4",
+            "7",
+            "9"
+        ]
+    },
+    "qualia": {
+        "Name": "qualia -ideaesthesia-",
+        "Difficulties": [
+            "4",
+            "7",
+            "9"
+        ]
+    },
+    "quon": {
+        "Name": "Quon",
+        "Difficulties": [
+            "4",
+            "6",
+            "9+"
+        ]
+    },
+    "rabbitintheblackroom": {
+        "Name": "Rabbit In The Black Room",
+        "Difficulties": [
+            "2",
+            "5",
+            "8"
+        ]
+    },
+    "reconstruction": {
+        "Name": "REconstruction",
+        "Difficulties": [
+            "2",
+            "6",
+            "8"
+        ]
+    },
+    "redandblue": {
+        "Name": "Red and Blue",
+        "Difficulties": [
+            "4",
+            "7",
+            "9"
+        ]
+    },
+    "reinvent": {
+        "Name": "Reinvent",
+        "Difficulties": [
+            "2",
+            "6",
+            "8"
+        ]
+    },
+    "relentless": {
+        "Name": "Relentless",
+        "Difficulties": [
+            "4",
+            "6",
+            "8"
+        ]
+    },
+    "revixy": {
+        "Name": "ReviXy",
+        "Difficulties": [
+            "3",
+            "6",
+            "9"
+        ]
+    },
+    "ringedgenesis": {
+        "Name": "Ringed Genesis",
+        "Difficulties": [
+            "5",
+            "8",
+            "10+"
+        ]
+    },
+    "rise": {
+        "Name": "Rise",
+        "Difficulties": [
+            "2",
+            "4",
+            "7"
+        ]
+    },
+    "romancewars": {
+        "Name": "Romance Wars",
+        "Difficulties": [
+            "1",
+            "4",
+            "7"
+        ]
+    },
+    "rugie": {
+        "Name": "Rugie",
+        "Difficulties": [
+            "3",
+            "6",
+            "9"
+        ]
+    },
+    "saikyostronger": {
+        "Name": "SAIKYO STRONGER",
+        "Difficulties": [
+            "5",
+            "9",
+            "11"
+        ]
+    },
+    "sayonarahatsukoi": {
+        "Name": "Sayonara Hatsukoi",
+        "Difficulties": [
+            "1",
+            "4",
+            "7"
+        ]
+    },
+    "scarletcage": {
+        "Name": "Scarlet Cage",
+        "Difficulties": [
+            "4",
+            "7",
+            "9+"
+        ]
+    },
+    "scarletlance": {
+        "Name": "Scarlet Lance",
+        "Difficulties": [
+            "4",
+            "7",
+            "10"
+        ]
+    },
+    "senkyou": {
+        "Name": "Senkyou",
+        "Difficulties": [
+            "3",
+            "5",
+            "8"
+        ]
+    },
+    "seventhsense": {
+        "Name": "7thSense",
+        "Difficulties": [
+            "3",
+            "7",
+            "9+"
+        ]
+    },
+    "shadesoflight": {
+        "Name": "Shades of Light in a Transcendent Realm",
+        "Difficulties": [
+            "3",
+            "6",
+            "8"
+        ]
+    },
+    "sheriruth": {
+        "Name": "Sheriruth",
+        "Difficulties": [
+            "5",
+            "7",
+            "10"
+        ]
+    },
+    "silentrush": {
+        "Name": "Silent Rush",
+        "Difficulties": [
+            "2",
+            "5",
+            "8"
+        ]
+    },
+    "singularity": {
+        "Name": "Singularity",
+        "Difficulties": [
+            "4",
+            "7",
+            "10+"
+        ]
+    },
+    "snowwhite": {
+        "Name": "Snow White",
+        "Difficulties": [
+            "2",
+            "5",
+            "8"
+        ]
+    },
+    "solitarydream": {
+        "Name": "Solitary Dream",
+        "Difficulties": [
+            "4",
+            "7",
+            "8"
+        ]
+    },
+    "soundwitch": {
+        "Name": "SOUNDWiTCH",
+        "Difficulties": [
+            "3",
+            "6",
+            "9+"
+        ]
+    },
+    "specta": {
+        "Name": "Specta",
+        "Difficulties": [
+            "3",
+            "6",
+            "9"
+        ]
+    },
+    "stager": {
+        "Name": "STAGER (ALL STAGE CLEAR)",
+        "Difficulties": [
+            "3",
+            "6",
+            "9"
+        ]
+    },
+    "strongholds": {
+        "Name": "Strongholds",
+        "Difficulties": [
+            "2",
+            "5",
+            "9"
+        ]
+    },
+    "sulfur": {
+        "Name": "Sulfur",
+        "Difficulties": [
+            "4",
+            "6",
+            "9+"
+        ]
+    },
+    "suomi": {
+        "Name": "Suomi",
+        "Difficulties": [
+            "2",
+            "5",
+            "7"
+        ]
+    },
+    "supernova": {
+        "Name": "SUPERNOVA",
+        "Difficulties": [
+            "3",
+            "6",
+            "9+"
+        ]
+    },
+    "surrender": {
+        "Name": "Surrender",
+        "Difficulties": [
+            "3",
+            "6",
+            "8"
+        ]
+    },
+    "syro": {
+        "Name": "Syro",
+        "Difficulties": [
+            "3",
+            "6",
+            "9"
+        ]
+    },
+    "tempestissimo": {
+        "Name": "Tempestissimo",
+        "Difficulties": [
+            "6",
+            "9",
+            "10",
+            "11"
+        ]
+    },
+    "teriqma": {
+        "Name": "Teriqma",
+        "Difficulties": [
+            "3",
+            "6",
+            "9"
+        ]
+    },
+    "themessage": {
+        "Name": "The Message",
+        "Difficulties": [
+            "3",
+            "6",
+            "9+"
+        ]
+    },
+    "tiemedowngently": {
+        "Name": "Tie me down gently",
+        "Difficulties": [
+            "3",
+            "5",
+            "8"
+        ]
+    },
+    "tiferet": {
+        "Name": "Tiferet",
+        "Difficulties": [
+            "4",
+            "7",
+            "10"
+        ]
+    },
+    "toaliceliddell": {
+        "Name": "To: Alice Liddell",
+        "Difficulties": [
+            "4",
+            "7",
+            "10"
+        ]
+    },
+    "trappola": {
+        "Name": "trappola bewitching",
+        "Difficulties": [
+            "3",
+            "6",
+            "10"
+        ]
+    },
+    "valhallazero": {
+        "Name": "Valhalla:0",
+        "Difficulties": [
+            "4",
+            "7",
+            "10"
+        ]
+    },
+    "vector": {
+        "Name": "VECTOЯ",
+        "Difficulties": [
+            "3",
+            "7",
+            "9"
+        ]
+    },
+    "vexaria": {
+        "Name": "Vexaria",
+        "Difficulties": [
+            "2",
+            "5",
+            "7",
+            "8"
+        ]
+    },
+    "viciousheroism": {
+        "Name": "Vicious Heroism",
+        "Difficulties": [
+            "4",
+            "7",
+            "10"
+        ]
+    },
+    "vindication": {
+        "Name": "Vindication",
+        "Difficulties": [
+            "4",
+            "6",
+            "9"
+        ]
+    },
+    "vividtheory": {
+        "Name": "Vivid Theory",
+        "Difficulties": [
+            "2",
+            "5",
+            "8"
+        ]
+    },
+    "viyella": {
+        "Name": "cry of viyella",
+        "Difficulties": [
+            "3",
+            "6",
+            "8"
+        ]
+    },
+    "viyellastears": {
+        "Name": "Viyella's Tears",
+        "Difficulties": [
+            "4",
+            "7",
+            "10"
+        ]
+    },
+    "worldexecuteme": {
+        "Name": "world.execute(me);",
+        "Difficulties": [
+            "3",
+            "5",
+            "8"
+        ]
+    },
+    "worldvanquisher": {
+        "Name": "World Vanquisher",
+        "Difficulties": [
+            "2",
+            "5",
+            "10+"
+        ]
+    },
+    "xanatos": {
+        "Name": "Xanatos",
+        "Difficulties": [
+            "4",
+            "7",
+            "10"
+        ]
+    },
+    "xeraphinite": {
+        "Name": "Xeraphinite",
+        "Difficulties": [
+            "3",
+            "7",
+            "9+"
+        ]
+    },
+    "yourvoiceso": {
+        "Name": "Your voice so... feat. Such",
+        "Difficulties": [
+            "3",
+            "6",
+            "9"
+        ]
+    },
+    "yozakurafubuki": {
+        "Name": "Yosakura Fubuki",
+        "Difficulties": [
+            "4",
+            "7",
+            "9"
+        ]
+    }
 }
