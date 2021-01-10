@@ -70,7 +70,7 @@ func createimg(w io.Writer, info *arcinfo) {
 	case len(songname) > 20:
 		pt = freetype.Pt(10, 68)
 	case len(songname) > 15:
-		pt = freetype.Pt(45, 68)
+		pt = freetype.Pt(35, 68)
 	}
 	_, err = c.DrawString(songname+"("+info.SongID()+")", pt)
 
