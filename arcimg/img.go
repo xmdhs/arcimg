@@ -64,11 +64,13 @@ func createimg(w io.Writer, info *arcinfo) {
 	songname := getsongname(info.Value[0].Avalue.Friends[0].Recentscore[0].SongID)
 
 	pt = freetype.Pt(84, 68)
-	if len(songname) > 15 {
-		pt = freetype.Pt(50, 68)
-		if len(songname) > 20 {
-			pt = freetype.Pt(10, 68)
-		}
+	switch {
+	case len(songname) > 25:
+		pt = freetype.Pt(10, 50)
+	case len(songname) > 20:
+		pt = freetype.Pt(10, 68)
+	case len(songname) > 15:
+		pt = freetype.Pt(45, 68)
 	}
 	_, err = c.DrawString(songname+"("+info.SongID()+")", pt)
 
