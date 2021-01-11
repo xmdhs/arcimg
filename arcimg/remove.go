@@ -2,7 +2,7 @@ package arcimg
 
 import "time"
 
-func Remove() {
+func remove() {
 	for {
 		time.Sleep(6000 * time.Millisecond)
 		ma.Range(func(k, v interface{}) bool {

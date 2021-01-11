@@ -16,7 +16,7 @@ var (
 
 func Anticc(f http.HandlerFunc) http.HandlerFunc {
 	oo.Do(func() {
-		go Remove()
+		go remove()
 	})
 	return func(w http.ResponseWriter, r *http.Request) {
 		ip := r.Header.Get("X-Real-Ip")
@@ -38,7 +38,7 @@ func Anticc(f http.HandlerFunc) http.HandlerFunc {
 
 func Log(f http.HandlerFunc) http.HandlerFunc {
 	o.Do(func() {
-		go Logw()
+		logw()
 	})
 	return func(w http.ResponseWriter, r *http.Request) {
 		u, err := url.Parse(r.Referer())
@@ -58,7 +58,7 @@ func Log(f http.HandlerFunc) http.HandlerFunc {
 				}
 				bb.WriteString(" ")
 			}
-			loggers <- ip + " | " + bb.String() + " | " + r.URL.String()
+			logger.Println(ip + " | " + bb.String() + " | " + r.URL.String())
 			buffer.Put(bb)
 		}
 		f(w, r)
