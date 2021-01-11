@@ -39,11 +39,18 @@ func Img(w http.ResponseWriter, req *http.Request) {
 			bb := buffer.Get()
 			c := bb.(*bytes.Buffer)
 			c.Reset()
-			createimg(c, &info)
-			at.Store(c)
+			err = createimg(c, &info)
+			if err != nil {
+				log.Println(err)
+			} else {
+				at.Store(c.Bytes())
+			}
 		}
 	}
 	w.Header().Set("Cache-Control", "max-age=60")
 	w.Header().Set("server", "xmdhs")
-	w.Write(at.Load().(*bytes.Buffer).Bytes())
+	data, ok := at.Load().([]byte)
+	if ok {
+		w.Write(data)
+	}
 }

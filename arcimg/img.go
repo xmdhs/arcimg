@@ -1,6 +1,7 @@
 package arcimg
 
 import (
+	"fmt"
 	"image"
 	"image/color"
 	"image/png"
@@ -37,7 +38,7 @@ const (
 	fontDPI  = 150 // 屏幕每英寸的分辨率
 )
 
-func createimg(w io.Writer, info *arcinfo) {
+func createimg(w io.Writer, info *arcinfo) error {
 	// 需要保存的文件
 	// 新建一个 指定大小的 RGBA位图
 	img := image.NewNRGBA(image.Rect(0, 0, dx, dy))
@@ -59,7 +60,7 @@ func createimg(w io.Writer, info *arcinfo) {
 	c.SetSrc(image.Black)
 
 	pt := freetype.Pt(460, 105) // 字出现的位置
-	_, err := c.DrawString(info.Value[0].Avalue.Friends[0].Name, pt)
+	c.DrawString(info.Value[0].Avalue.Friends[0].Name, pt)
 
 	songname := getsongname(info.Value[0].Avalue.Friends[0].Recentscore[0].SongID)
 
@@ -72,42 +73,36 @@ func createimg(w io.Writer, info *arcinfo) {
 	case len(songname) > 15:
 		pt = freetype.Pt(35, 68)
 	}
-	_, err = c.DrawString(songname+"("+info.SongID()+")", pt)
+	c.DrawString(songname+"("+info.SongID()+")", pt)
 
 	pt = freetype.Pt(84, 95)
-	_, err = c.DrawString(strconv.Itoa(info.Value[0].Avalue.Friends[0].Recentscore[0].Score), pt)
+	c.DrawString(strconv.Itoa(info.Value[0].Avalue.Friends[0].Recentscore[0].Score), pt)
 
 	pt = freetype.Pt(84, 119)
-	_, err = c.DrawString(info.atype(), pt)
+	c.DrawString(info.atype(), pt)
 
 	pt = freetype.Pt(84, 146)
-	_, err = c.DrawString(info.Time(), pt)
+	c.DrawString(info.Time(), pt)
 
 	pt = freetype.Pt(268, 68)
-	_, err = c.DrawString(info.Pure(), pt)
+	c.DrawString(info.Pure(), pt)
 
 	pt = freetype.Pt(280, 95)
-	_, err = c.DrawString(info.Far(), pt)
+	c.DrawString(info.Far(), pt)
 
 	pt = freetype.Pt(270, 119)
-	_, err = c.DrawString(info.Lost(), pt)
+	c.DrawString(info.Lost(), pt)
 
 	pt = freetype.Pt(268, 146)
-	_, err = c.DrawString(info.Rating(), pt)
+	c.DrawString(info.Rating(), pt)
 
 	pt = freetype.Pt(457, 68)
-	_, err = c.DrawString(info.PTT(), pt)
-
-	if err != nil {
-		log.Println("向图片写字体出错")
-		log.Println(err)
-		return
-	}
+	c.DrawString(info.PTT(), pt)
 
 	// 以PNG格式保存文件
-	err = png.Encode(w, img)
+	err := png.Encode(w, img)
 	if err != nil {
-		log.Println("生成图片出错")
-		log.Println(err)
+		return fmt.Errorf("createimg: %w", err)
 	}
+	return nil
 }

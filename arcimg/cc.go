@@ -5,6 +5,7 @@ import (
 	"log"
 	"net/http"
 	"net/url"
+	"strings"
 	"sync"
 )
 
@@ -18,7 +19,7 @@ func Anticc(f http.HandlerFunc) http.HandlerFunc {
 		go Remove()
 	})
 	return func(w http.ResponseWriter, r *http.Request) {
-		ip := r.Header.Get("X-Forwarded-For")
+		ip := r.Header.Get("X-Real-Ip")
 		log.Println(ip + " | " + r.Header.Get("Referer"))
 		i, bb := ma.LoadOrStore(ip, 0)
 		if bb {
@@ -45,9 +46,8 @@ func Log(f http.HandlerFunc) http.HandlerFunc {
 		if err == nil {
 			host = u.Hostname()
 		}
-
-		if r.URL.String() != "/img.png" || host != "www.mcbbs.net" {
-			ip := r.Header.Get("X-Forwarded-For")
+		if r.URL.String() != "/img.png" || strings.HasSuffix(host, "mcbbs.net") {
+			ip := r.Header.Get("X-Real-Ip")
 			b := buffer.Get()
 			bb := b.(*bytes.Buffer)
 			bb.Reset()
