@@ -46,7 +46,7 @@ func Log(f http.HandlerFunc) http.HandlerFunc {
 		if err == nil {
 			host = u.Hostname()
 		}
-		if r.URL.String() != "/img.png" || strings.HasSuffix(host, "mcbbs.net") {
+		if r.URL.String() != "/img.png" || !strings.HasSuffix(host, "mcbbs.net") {
 			ip := r.Header.Get("X-Real-Ip")
 			b := buffer.Get()
 			bb := b.(*bytes.Buffer)
