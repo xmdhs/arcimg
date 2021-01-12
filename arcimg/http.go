@@ -45,6 +45,7 @@ func Img(w http.ResponseWriter, req *http.Request) {
 			} else {
 				at.Store(c.Bytes())
 			}
+			buffer.Put(c)
 		}
 	}
 	w.Header().Set("Cache-Control", "max-age=60")
