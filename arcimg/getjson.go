@@ -42,6 +42,11 @@ func getjson(i int) []byte {
 	switch reps.Header.Get("Content-Encoding") {
 	case "gzip":
 		reader, err = gzip.NewReader(reps.Body)
+		if err != nil {
+			log.Println(err)
+			time.Sleep(5 * time.Second)
+			return getjson(i - 1)
+		}
 		defer reader.Close()
 	default:
 		reader = reps.Body
