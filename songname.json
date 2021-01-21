@@ -111,6 +111,14 @@
             "10"
         ]
     },
+    "attraqtia": {
+        "Name": "AttraqtiA",
+        "Difficulties": [
+            "4",
+            "7",
+            "10"
+        ]
+    },
     "auxesia": {
         "Name": "Auxesia",
         "Difficulties": [
@@ -269,6 +277,14 @@
             "3",
             "7",
             "9"
+        ]
+    },
+    "climax": {
+        "Name": "Climax",
+        "Difficulties": [
+            "4",
+            "7",
+            "10"
         ]
     },
     "clotho": {
@@ -641,6 +657,14 @@
             "10"
         ]
     },
+    "glow": {
+        "Name": "Glow",
+        "Difficulties": [
+            "4",
+            "7",
+            "9"
+        ]
+    },
     "goodtek": {
         "Name": "GOODTEK (Arcaea Edit)",
         "Difficulties": [
@@ -656,6 +680,14 @@
             "3",
             "6",
             "9+"
+        ]
+    },
+    "gou": {
+        "Name": "Misdeed -la bonté de Dieu et l'origine du mal-",
+        "Difficulties": [
+            "5",
+            "8",
+            "10+"
         ]
     },
     "grievouslady": {
@@ -849,6 +881,14 @@
             "3",
             "6",
             "9"
+        ]
+    },
+    "lastcelebration": {
+        "Name": "Last Celebration",
+        "Difficulties": [
+            "3",
+            "6",
+            "10"
         ]
     },
     "lazyaddiction": {
