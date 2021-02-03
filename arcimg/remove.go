@@ -12,7 +12,7 @@ func remove() {
 		time.Sleep(3 * time.Minute)
 		ma.Range(func(k, v interface{}) bool {
 			vv := v.(c)
-			if vv.time-time.Now().Unix() > 600 {
+			if time.Now().Unix()-vv.time > 600 {
 				ma.Delete(k)
 			}
 			return true
