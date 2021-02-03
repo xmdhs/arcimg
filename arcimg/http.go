@@ -14,7 +14,6 @@ var (
 	btime int64
 	mu    sync.Mutex
 	ajson atomic.Value
-	ma    sync.Map
 	at    atomic.Value
 )
 

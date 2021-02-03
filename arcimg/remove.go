@@ -1,18 +1,47 @@
 package arcimg
 
-import "time"
+import (
+	"sync"
+	"time"
+)
+
+var ma cc
 
 func remove() {
 	for {
-		time.Sleep(6000 * time.Millisecond)
+		time.Sleep(3 * time.Minute)
 		ma.Range(func(k, v interface{}) bool {
-			vv := v.(int)
-			if vv <= 0 {
+			vv := v.(c)
+			if vv.time-time.Now().Unix() > 600 {
 				ma.Delete(k)
-			} else {
-				ma.Store(k, vv-1)
 			}
 			return true
 		})
 	}
+}
+
+type c struct {
+	i    int
+	time int64
+}
+
+type cc struct {
+	sync.Map
+}
+
+func (cc *cc) Get(key string) int {
+	v, ok := cc.Load(key)
+	if !ok {
+		return 0
+	}
+	c := v.(c)
+	return c.i
+}
+
+func (cc *cc) Store(key string, value int) {
+	c := c{
+		i:    value,
+		time: time.Now().Unix(),
+	}
+	cc.Map.Store(key, c)
 }

@@ -21,17 +21,12 @@ func Anticc(f http.HandlerFunc) http.HandlerFunc {
 	return func(w http.ResponseWriter, r *http.Request) {
 		ip := r.Header.Get("X-Real-Ip")
 		log.Println(ip + " | " + r.Header.Get("Referer"))
-		i, bb := ma.LoadOrStore(ip, 0)
-		if bb {
-			ii, _ := i.(int)
-			ma.Store(ip, ii+1)
-		}
-		i, bb = ma.Load(ip)
-		ii, _ := i.(int)
-		if ii > 5 {
-			ma.Store(ip, 30)
+		i := ma.Get(ip)
+		if i > 5 {
+			ma.Store(ip, 10)
 			return
 		}
+		ma.Store(ip, i+1)
 		f(w, r)
 	}
 }
