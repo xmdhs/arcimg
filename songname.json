@@ -488,6 +488,14 @@
             "9"
         ]
     },
+    "enchantedlove": {
+        "Name": "enchanted love",
+        "Difficulties": [
+            "2",
+            "4",
+            "8"
+        ]
+    },
     "equilibrium": {
         "Name": "Equilibrium",
         "Difficulties": [
@@ -1468,6 +1476,14 @@
             "3",
             "6",
             "9"
+        ]
+    },
+    "take": {
+        "Name": "Bamboo",
+        "Difficulties": [
+            "3",
+            "6",
+            "9+"
         ]
     },
     "tempestissimo": {
