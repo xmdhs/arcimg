@@ -25,7 +25,7 @@ func getjson(i int) []byte {
 	rep.Header.Set("Accept", "*/*")
 	rep.Header.Set("Authorization", authorization)
 	rep.Header.Set("Platform", "ios")
-	rep.Header.Set("AppVersion", "3.5.0")
+	rep.Header.Set("AppVersion", "3.5.2")
 	rep.Header.Set("User-Agent", "Arc-mobile/v3.5.0.0 CFNetwork/811.5.4 Darwin/16.7.0")
 	rep.Header.Set("Host", "arcapi.lowiro.com")
 	rep.Header.Set("Connection", "Keep-Alive")

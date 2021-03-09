@@ -649,6 +649,14 @@
             "8"
         ]
     },
+    "gimmedablood": {
+        "Name": "GIMME DA BLOOD",
+        "Difficulties": [
+            "3",
+            "7",
+            "10"
+        ]
+    },
     "givemeanightmare": {
         "Name": "Give Me a Nightmare",
         "Difficulties": [
