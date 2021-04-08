@@ -1,106 +1,58 @@
 package arcimg
 
 import (
+	_ "embed"
 	"fmt"
-	"image"
-	"image/color"
-	"image/png"
 	"io"
-	"io/ioutil"
-	"log"
 	"strconv"
+	"text/template"
+)
 
-	"github.com/golang/freetype"
-	"github.com/golang/freetype/truetype"
+//go:embed arc.svg
+var b string
+
+var (
+	t *template.Template
 )
 
 func init() {
-	fontBytes, err := ioutil.ReadFile(fontFile)
+	var err error
+	t, err = template.New("arc").Parse(b)
 	if err != nil {
-		log.Println("读取字体数据出错")
-		log.Fatalln(err)
-	}
-	font, err = freetype.ParseFont(fontBytes)
-	if err != nil {
-		log.Println("转换字体样式出错")
-		log.Fatalln(err)
+		panic(err)
 	}
 }
 
-var font *truetype.Font
-
-const (
-	dx = 615 // 图片的大小 宽度
-	dy = 212 // 图片的大小 高度
-	// fontFile = "FZFSK.TTF"
-	fontFile = "t.ttf"
-	fontSize = 8   // 字体尺寸
-	fontDPI  = 150 // 屏幕每英寸的分辨率
-)
+type arc struct {
+	Sone     string
+	Score    string
+	Status   string
+	Time     string
+	P        string
+	F        string
+	L        string
+	Rating   string
+	PTT      string
+	Name     string
+	JOinTime string
+}
 
 func createimg(w io.Writer, info *arcinfo) error {
-	// 需要保存的文件
-	// 新建一个 指定大小的 RGBA位图
-	img := image.NewNRGBA(image.Rect(0, 0, dx, dy))
-	// 画背景
-	for y := 0; y < dy; y++ {
-		for x := 0; x < dx; x++ {
-			// 设置某个点的颜色，依次是 RGBA
-			img.Set(x, y, color.RGBA{255, 255, 255, 255})
-		}
-	}
-	// 读字体数据
-
-	c := freetype.NewContext()
-	c.SetDPI(fontDPI)
-	c.SetFont(font)
-	c.SetFontSize(fontSize)
-	c.SetClip(img.Bounds())
-	c.SetDst(img)
-	c.SetSrc(image.Black)
-
-	pt := freetype.Pt(460, 105) // 字出现的位置
-	c.DrawString(info.Value[0].Avalue.Friends[0].Name, pt)
-
 	songname := getsongname(info.Value[0].Avalue.Friends[0].Recentscore[0].SongID)
-
-	pt = freetype.Pt(84, 68)
-	switch {
-	case len(songname) > 25:
-		pt = freetype.Pt(10, 50)
-	case len(songname) > 20:
-		pt = freetype.Pt(10, 68)
-	case len(songname) > 15:
-		pt = freetype.Pt(35, 68)
+	a := arc{
+		Sone:     songname + "(" + info.SongID() + ")",
+		Score:    strconv.Itoa(info.Value[0].Avalue.Friends[0].Recentscore[0].Score),
+		Status:   info.atype(),
+		Time:     info.Time(),
+		P:        info.Pure(),
+		F:        info.Far(),
+		L:        info.Lost(),
+		Rating:   info.Rating(),
+		PTT:      info.PTT(),
+		Name:     info.Value[0].Avalue.Friends[0].Name,
+		JOinTime: "",
 	}
-	c.DrawString(songname+"("+info.SongID()+")", pt)
-
-	pt = freetype.Pt(84, 95)
-	c.DrawString(strconv.Itoa(info.Value[0].Avalue.Friends[0].Recentscore[0].Score), pt)
-
-	pt = freetype.Pt(84, 119)
-	c.DrawString(info.atype(), pt)
-
-	pt = freetype.Pt(84, 146)
-	c.DrawString(info.Time(), pt)
-
-	pt = freetype.Pt(268, 68)
-	c.DrawString(info.Pure(), pt)
-
-	pt = freetype.Pt(280, 95)
-	c.DrawString(info.Far(), pt)
-
-	pt = freetype.Pt(270, 119)
-	c.DrawString(info.Lost(), pt)
-
-	pt = freetype.Pt(268, 146)
-	c.DrawString(info.Rating(), pt)
-
-	pt = freetype.Pt(457, 68)
-	c.DrawString(info.PTT(), pt)
-
-	// 以PNG格式保存文件
-	err := png.Encode(w, img)
+	err := t.ExecuteTemplate(w, "arc", a)
 	if err != nil {
 		return fmt.Errorf("createimg: %w", err)
 	}

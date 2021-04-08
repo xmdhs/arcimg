@@ -22,7 +22,7 @@ func Anticc(f http.HandlerFunc) http.HandlerFunc {
 		ip := r.Header.Get("X-Real-Ip")
 		log.Println(ip + " | " + r.Header.Get("Referer"))
 		i := ma.Get(ip)
-		if i > 5 {
+		if i > 10 {
 			ma.Store(ip, 10)
 			return
 		}

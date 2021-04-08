@@ -48,7 +48,7 @@ func Img(w http.ResponseWriter, req *http.Request) {
 		}
 	}
 	w.Header().Set("Cache-Control", "max-age=60")
-	w.Header().Set("content-type", "image/png")
+	w.Header().Set("content-type", "image/svg+xml")
 	w.Header().Set("server", "xmdhs")
 	data, ok := at.Load().([]byte)
 	if ok {
