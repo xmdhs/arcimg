@@ -35,10 +35,20 @@ type arc struct {
 	PTT      string
 	Name     string
 	JOinTime string
+	Size     string
 }
 
 func createimg(w io.Writer, info *arcinfo) error {
 	songname := getsongname(info.Value[0].Avalue.Friends[0].Recentscore[0].SongID)
+	size := "19"
+	switch {
+	case len(songname) > 25:
+		size = "13"
+	case len(songname) > 20:
+		size = "15"
+	case len(songname) > 15:
+		size = "16"
+	}
 	a := arc{
 		Sone:     songname + "(" + info.SongID() + ")",
 		Score:    strconv.Itoa(info.Value[0].Avalue.Friends[0].Recentscore[0].Score),
@@ -51,6 +61,7 @@ func createimg(w io.Writer, info *arcinfo) error {
 		PTT:      info.PTT(),
 		Name:     info.Value[0].Avalue.Friends[0].Name,
 		JOinTime: "",
+		Size:     size,
 	}
 	err := t.ExecuteTemplate(w, "arc", a)
 	if err != nil {
