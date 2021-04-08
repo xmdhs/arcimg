@@ -36,16 +36,20 @@ type arc struct {
 	Name     string
 	JOinTime string
 	Size     string
+	X        string
 }
 
 func createimg(w io.Writer, info *arcinfo) error {
 	songname := getsongname(info.Value[0].Avalue.Friends[0].Recentscore[0].SongID)
 	size := "19"
+	X := "104"
 	switch {
 	case len(songname) > 25:
 		size = "13"
+		X = "56"
 	case len(songname) > 20:
 		size = "15"
+		X = "60"
 	case len(songname) > 15:
 		size = "16"
 	}
@@ -62,6 +66,7 @@ func createimg(w io.Writer, info *arcinfo) error {
 		Name:     info.Value[0].Avalue.Friends[0].Name,
 		JOinTime: "",
 		Size:     size,
+		X:        X,
 	}
 	err := t.ExecuteTemplate(w, "arc", a)
 	if err != nil {
