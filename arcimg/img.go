@@ -42,14 +42,14 @@ type arc struct {
 func createimg(w io.Writer, info *arcinfo) error {
 	songname := getsongname(info.Value[0].Avalue.Friends[0].Recentscore[0].SongID)
 	size := "19"
-	X := "104"
+	X := "68"
 	switch {
 	case len(songname) > 25:
 		size = "13"
-		X = "56"
+		X = "30"
 	case len(songname) > 20:
 		size = "15"
-		X = "60"
+		X = "45"
 	case len(songname) > 15:
 		size = "16"
 	}
