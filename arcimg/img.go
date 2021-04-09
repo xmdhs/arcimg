@@ -46,7 +46,7 @@ func createimg(w io.Writer, info *arcinfo) error {
 	switch {
 	case len(songname) > 25:
 		size = "13"
-		X = "30"
+		X = "25"
 	case len(songname) > 20:
 		size = "15"
 		X = "45"
