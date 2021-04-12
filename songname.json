@@ -159,6 +159,14 @@
             "9+"
         ]
     },
+    "bassline": {
+        "Name": "Can I Friend You on Bassbook? Lol",
+        "Difficulties": [
+            "3",
+            "6",
+            "9"
+        ]
+    },
     "battlenoone": {
         "Name": "BATTLE NO.1",
         "Difficulties": [
@@ -925,6 +933,14 @@
     },
     "libertas": {
         "Name": "Libertas",
+        "Difficulties": [
+            "3",
+            "5",
+            "9"
+        ]
+    },
+    "lifeispiano": {
+        "Name": "Life is PIANO",
         "Difficulties": [
             "3",
             "5",
