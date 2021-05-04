@@ -33,7 +33,7 @@ func Anticc(f http.HandlerFunc) http.HandlerFunc {
 
 func Log(f http.HandlerFunc) http.HandlerFunc {
 	o.Do(func() {
-		logw()
+		logger = logw()
 	})
 	return func(w http.ResponseWriter, r *http.Request) {
 		u, err := url.Parse(r.Referer())
