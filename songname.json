@@ -1,4 +1,12 @@
 {
+    "aegleseeker": {
+        "Name": "Aegleseeker",
+        "Difficulties": [
+            "5",
+            "8",
+            "11"
+        ]
+    },
     "aiueoon": {
         "Name": "AI[UE]OON",
         "Difficulties": [
@@ -303,6 +311,14 @@
             "7"
         ]
     },
+    "coastalhighway": {
+        "Name": "Coastal Highway",
+        "Difficulties": [
+            "3",
+            "6",
+            "8"
+        ]
+    },
     "conflict": {
         "Name": "conflict",
         "Difficulties": [
@@ -340,6 +356,14 @@
         "Difficulties": [
             "4",
             "7",
+            "9"
+        ]
+    },
+    "crystalgravity": {
+        "Name": "Crystal Gravity",
+        "Difficulties": [
+            "3",
+            "6",
             "9"
         ]
     },
@@ -567,6 +591,14 @@
             "3",
             "7",
             "9"
+        ]
+    },
+    "farawaylight": {
+        "Name": "Far Away Light",
+        "Difficulties": [
+            "4",
+            "7",
+            "9+"
         ]
     },
     "feelssoright": {
@@ -955,12 +987,21 @@
             "9+"
         ]
     },
+    "loschen": {
+        "Name": "Löschen",
+        "Difficulties": [
+            "3",
+            "7",
+            "10"
+        ]
+    },
     "lostcivilization": {
         "Name": "Lost Civilization",
         "Difficulties": [
             "4",
             "7",
-            "9"
+            "9",
+            "9+"
         ]
     },
     "lostdesire": {
@@ -1098,7 +1139,8 @@
         "Difficulties": [
             "4",
             "7",
-            "8"
+            "8",
+            "9"
         ]
     },
     "nhelv": {
@@ -1123,6 +1165,14 @@
             "3",
             "5",
             "8"
+        ]
+    },
+    "odysseia": {
+        "Name": "ΟΔΥΣΣΕΙΑ",
+        "Difficulties": [
+            "4",
+            "7",
+            "9"
         ]
     },
     "omakeno": {
@@ -1179,6 +1229,22 @@
             "4",
             "7",
             "10+"
+        ]
+    },
+    "overwhelm": {
+        "Name": "Overwhelm",
+        "Difficulties": [
+            "5",
+            "8",
+            "10"
+        ]
+    },
+    "paperwitch": {
+        "Name": "Paper Witch",
+        "Difficulties": [
+            "2",
+            "5",
+            "8"
         ]
     },
     "paradise": {
@@ -1573,6 +1639,14 @@
             "4",
             "7",
             "10"
+        ]
+    },
+    "vandalism": {
+        "Name": "Vandalism",
+        "Difficulties": [
+            "3",
+            "6",
+            "9+"
         ]
     },
     "vector": {
