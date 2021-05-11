@@ -17,7 +17,10 @@ func getjson(i int) []byte {
 	client := &http.Client{
 		Timeout: 5 * time.Second,
 	}
-	rep, err := http.NewRequest("GET", "https://arcapi.lowiro.com/latte/13/compose/aggregate?calls=%5b%7b+%22endpoint%22%3a+%22%2fuser%2fme%22%2c+%22id%22%3a+0+%7d%5d", nil)
+	rep, err := http.NewRequest("GET", "https://arcapi.lowiro.com/blockchain/14/compose/aggregate?calls=%5b%7b+%22endpoint%22%3a+%22%2fuser%2fme%22%2c+%22id%22%3a+0+%7d%5d", nil)
+	if err != nil {
+		panic(err)
+	}
 	rep.Header.Set("Accept-Encoding", "identity")
 	rep.Header.Set("Content-Type", "application/x-www-form-urlencoded; charset=utf-8")
 	rep.Header.Set("Accept-Language", "zh-cn")
@@ -25,8 +28,8 @@ func getjson(i int) []byte {
 	rep.Header.Set("Accept", "*/*")
 	rep.Header.Set("Authorization", authorization)
 	rep.Header.Set("Platform", "ios")
-	rep.Header.Set("AppVersion", "3.5.2")
-	rep.Header.Set("User-Agent", "Arc-mobile/v3.5.0.0 CFNetwork/811.5.4 Darwin/16.7.0")
+	rep.Header.Set("AppVersion", "3.6.0")
+	rep.Header.Set("User-Agent", "Arc-mobile/v3.6.0.0 CFNetwork/811.5.4 Darwin/16.7.0")
 	rep.Header.Set("Host", "arcapi.lowiro.com")
 	rep.Header.Set("Connection", "Keep-Alive")
 	reps, err := client.Do(rep)
