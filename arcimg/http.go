@@ -24,15 +24,17 @@ func Img(w http.ResponseWriter, req *http.Request) {
 	b, err := caches.Get(uid)
 	if err != nil {
 		temp, err, _ := sl.Do(uid, func() (interface{}, error) {
-			var err error
+			var errr error
 			for i := 0; i < 3; i++ {
-				b, err = getJson(uid)
+				b, err := getJson(uid)
 				if err != nil {
+					errr = err
 					log.Println(err)
 					continue
 				}
 				a, err := json2(b)
 				if err != nil {
+					errr = err
 					e := &ErrApiStatus{}
 					if errors.As(err, &e) {
 						break
@@ -43,12 +45,13 @@ func Img(w http.ResponseWriter, req *http.Request) {
 				by := bytes.Buffer{}
 				err = createimg(&by, &a)
 				if err != nil {
+					errr = err
 					log.Println(err)
 					continue
 				}
 				return by.Bytes(), nil
 			}
-			return nil, err
+			return nil, errr
 		})
 		if err != nil {
 			http.Error(w, err.Error(), 500)
