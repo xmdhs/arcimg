@@ -1,85 +1,59 @@
 package arcimg
 
 import (
-	"compress/gzip"
+	"fmt"
 	"io"
-	"io/ioutil"
-	"log"
 	"net/http"
+	"net/url"
 	"os"
 	"time"
 )
 
-func getjson(i int) []byte {
-	if i <= 0 {
-		return nil
-	}
-	client := &http.Client{
-		Timeout: 5 * time.Second,
-	}
-	rep, err := http.NewRequest("GET", "https://arcapi.lowiro.com/blockchain/14/compose/aggregate?calls=%5b%7b+%22endpoint%22%3a+%22%2fuser%2fme%22%2c+%22id%22%3a+0+%7d%5d", nil)
+func getJson(uid string) ([]byte, error) {
+	u := url.URL{}
+	u.Host = apiaddress.Host
+	u.Scheme = apiaddress.Scheme
+	u.Path = "/v4/user/info"
+	v := url.Values{}
+	v.Set("usercode", uid)
+	v.Set("recent", "1")
+	u.RawQuery = v.Encode()
+	b, err := httpGet(u.String())
 	if err != nil {
-		panic(err)
+		return nil, fmt.Errorf("getJson: %w", err)
 	}
-	rep.Header.Set("Accept-Encoding", "identity")
-	rep.Header.Set("Content-Type", "application/x-www-form-urlencoded; charset=utf-8")
-	rep.Header.Set("Accept-Language", "zh-cn")
-	rep.Header.Set("Accept-Encoding", "gzip")
-	rep.Header.Set("Accept", "*/*")
-	rep.Header.Set("Authorization", authorization)
-	rep.Header.Set("Platform", "ios")
-	rep.Header.Set("AppVersion", "3.6.0")
-	rep.Header.Set("User-Agent", "Arc-mobile/v3.6.0.0 CFNetwork/811.5.4 Darwin/16.7.0")
-	rep.Header.Set("Host", "arcapi.lowiro.com")
-	rep.Header.Set("Connection", "Keep-Alive")
-	reps, err := client.Do(rep)
+	return b, nil
+}
+
+var client = http.Client{
+	Timeout: 5 * time.Second,
+}
+
+func httpGet(url string) ([]byte, error) {
+	reps, err := client.Get(url)
 	if reps != nil {
 		defer reps.Body.Close()
 	}
 	if err != nil {
-		log.Println(err)
-		time.Sleep(5 * time.Second)
-		return getjson(i - 1)
+		return nil, fmt.Errorf("httpGet: %w", err)
 	}
-	var reader io.ReadCloser
-	switch reps.Header.Get("Content-Encoding") {
-	case "gzip":
-		reader, err = gzip.NewReader(reps.Body)
-		if err != nil {
-			log.Println(err)
-			time.Sleep(5 * time.Second)
-			return getjson(i - 1)
-		}
-		defer reader.Close()
-	default:
-		reader = reps.Body
-	}
-	b, err := ioutil.ReadAll(reader)
+	b, err := io.ReadAll(reps.Body)
 	if err != nil {
-		log.Println(err)
-		time.Sleep(5 * time.Second)
-		return getjson(i - 1)
+		return nil, fmt.Errorf("httpGet: %w", err)
 	}
-	if reps.StatusCode != http.StatusOK {
-		log.Println(reps.Status)
-		time.Sleep(5 * time.Second)
-		return getjson(i - 1)
-	}
-	return b
+	return b, nil
 }
 
-func get() {
-	a := getjson(5)
-	if a != nil {
-		ajson.Store(a)
-	}
-}
-
-var authorization string
+var apiaddress *url.URL
 
 func init() {
-	authorization = os.Getenv("authorization")
-	if authorization == "" {
-		panic(`authorization == ""`)
+	a := os.Getenv("apiaddress")
+	if a == "" {
+		panic(`apiaddress == ""`)
+	}
+	var err error
+	apiaddress, err = url.Parse(a)
+	if err != nil {
+		panic(err)
 	}
 }

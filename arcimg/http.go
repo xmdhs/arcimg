@@ -2,56 +2,63 @@ package arcimg
 
 import (
 	"bytes"
+	"errors"
 	"log"
 	"net/http"
-	"sync"
-	"sync/atomic"
 	"time"
+
+	"github.com/julienschmidt/httprouter"
+	"github.com/xmdhs/arcimg/cache"
+	"github.com/xmdhs/arcimg/cache/ram"
+	"golang.org/x/sync/singleflight"
 )
 
-var (
-	atime int64
-	btime int64
-	mu    sync.Mutex
-	ajson atomic.Value
-	at    atomic.Value
-)
+var caches cache.Cache = ram.Newcache()
 
-func init() {
-	get()
-	if ajson.Load().([]byte) == nil {
-		log.Fatalln("Can not get json")
-	}
-}
+var sl = singleflight.Group{}
 
 func Img(w http.ResponseWriter, req *http.Request) {
-	aoldtime := atomic.LoadInt64(&atime)
-	if time.Now().Unix()-aoldtime > 600 && atomic.CompareAndSwapInt64(&atime, aoldtime, time.Now().Unix()) {
-		go get()
-	}
-	boldtime := atomic.LoadInt64(&btime)
-	if time.Now().Unix()-boldtime > 30 && atomic.CompareAndSwapInt64(&btime, boldtime, time.Now().Unix()) {
-		info, err := json2(ajson.Load().([]byte))
-		if err != nil {
-			log.Println(err)
-		} else if info.Value != nil {
-			bb := buffer.Get()
-			c := bb.(*bytes.Buffer)
-			c.Reset()
-			err = createimg(c, &info)
-			if err != nil {
-				log.Println(err)
-			} else {
-				at.Store(c.Bytes())
+	p := httprouter.ParamsFromContext(req.Context())
+	uid := p.ByName("uid")
+
+	b, err := caches.Get(uid)
+	if err == nil {
+		temp, err, _ := sl.Do(uid, func() (interface{}, error) {
+			var err error
+			for i := 0; i < 3; i++ {
+				b, err = getJson(uid)
+				if err != nil {
+					log.Println(err)
+					continue
+				}
+				a, err := json2(b)
+				if err != nil {
+					e := &ErrApiStatus{}
+					if errors.As(err, &e) {
+						break
+					}
+					log.Println(err)
+					continue
+				}
+				by := bytes.Buffer{}
+				err = createimg(&by, &a)
+				if err != nil {
+					log.Println(err)
+					continue
+				}
+				return by.Bytes(), nil
 			}
-			buffer.Put(c)
+			return nil, err
+		})
+		if err != nil {
+			http.Error(w, err.Error(), 500)
+			return
 		}
+		b = temp.([]byte)
+		caches.Set(uid, b, time.Now().Add(20*time.Minute))
 	}
 	w.Header().Set("Cache-Control", "max-age=60")
 	w.Header().Set("content-type", "image/svg+xml")
 	w.Header().Set("server", "xmdhs")
-	data, ok := at.Load().([]byte)
-	if ok {
-		w.Write(data)
-	}
+	w.Write(b)
 }

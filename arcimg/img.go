@@ -40,7 +40,7 @@ type arc struct {
 }
 
 func createimg(w io.Writer, info *arcinfo) error {
-	songname := getsongname(info.Value[0].Avalue.Friends[0].Recentscore[0].SongID)
+	songname := getsongname(info.Content.RecentScore[0].SongID)
 	size := "19"
 	X := "68"
 	switch {
@@ -58,7 +58,7 @@ func createimg(w io.Writer, info *arcinfo) error {
 	}
 	a := arc{
 		Sone:     songname + "(" + info.SongID() + ")",
-		Score:    strconv.Itoa(info.Value[0].Avalue.Friends[0].Recentscore[0].Score),
+		Score:    strconv.Itoa(info.Content.RecentScore[0].Score),
 		Status:   info.atype(),
 		Time:     info.Time(),
 		P:        info.Pure(),
@@ -66,7 +66,7 @@ func createimg(w io.Writer, info *arcinfo) error {
 		L:        info.Lost(),
 		Rating:   info.Rating(),
 		PTT:      info.PTT(),
-		Name:     info.Value[0].Avalue.Friends[0].Name,
+		Name:     info.Content.Name,
 		JOinTime: "",
 		Size:     size,
 		X:        X,

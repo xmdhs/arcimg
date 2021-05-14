@@ -9,27 +9,29 @@ import (
 )
 
 type arcinfo struct {
-	Value []value `json:"value"`
+	Content arcinfoContent `json:"content"`
+	Status  int            `json:"status"`
 }
 
-type value struct {
-	Avalue avalue `json:"value"`
+type arcinfoContent struct {
+	Character              int                         `json:"character"`
+	Code                   string                      `json:"code"`
+	IsCharUncapped         bool                        `json:"is_char_uncapped"`
+	IsCharUncappedOverride bool                        `json:"is_char_uncapped_override"`
+	IsMutual               bool                        `json:"is_mutual"`
+	IsSkillSealed          bool                        `json:"is_skill_sealed"`
+	JoinDate               int                         `json:"join_date"`
+	Name                   string                      `json:"name"`
+	Rating                 int                         `json:"rating"`
+	RecentScore            []arcinfoContentRecentScore `json:"recent_score"`
+	UserID                 int                         `json:"user_id"`
 }
 
-type avalue struct {
-	Friends []friends `json:"friends"`
-}
-
-type friends struct {
-	Name        string        `json:"name"`
-	Rating      int           `json:"rating"`
-	Recentscore []recentscore `json:"recent_score"`
-}
-
-type recentscore struct {
+type arcinfoContentRecentScore struct {
 	BestClearType     int     `json:"best_clear_type"`
 	ClearType         int     `json:"clear_type"`
 	Difficulty        int     `json:"difficulty"`
+	Health            int     `json:"health"`
 	MissCount         int     `json:"miss_count"`
 	Modifier          int     `json:"modifier"`
 	NearCount         int     `json:"near_count"`
@@ -39,6 +41,7 @@ type recentscore struct {
 	ShinyPerfectCount int     `json:"shiny_perfect_count"`
 	SongID            string  `json:"song_id"`
 	TimePlayed        int     `json:"time_played"`
+	UID               int     `json:"uid"`
 }
 
 func json2(jsonn []byte) (arcinfo, error) {
@@ -47,11 +50,22 @@ func json2(jsonn []byte) (arcinfo, error) {
 		log.Println(err)
 		return arc, err
 	}
+	if arc.Status != 0 {
+		return arc, &ErrApiStatus{Code: arc.Status}
+	}
 	return arc, nil
 }
 
+type ErrApiStatus struct {
+	Code int
+}
+
+func (e *ErrApiStatus) Error() string {
+	return "ErrApiStatus code: " + strconv.Itoa(e.Code)
+}
+
 func (a *arcinfo) atype() string {
-	switch a.Value[0].Avalue.Friends[0].Recentscore[0].ClearType {
+	switch a.Content.RecentScore[0].ClearType {
 	case 0:
 		return "Track Lost"
 	case 1:
@@ -70,7 +84,7 @@ func (a *arcinfo) atype() string {
 }
 
 func (a *arcinfo) Time() string {
-	return convertTimeToFormat(a.Value[0].Avalue.Friends[0].Recentscore[0].TimePlayed)
+	return convertTimeToFormat(a.Content.RecentScore[0].TimePlayed)
 }
 
 func convertTimeToFormat(timetamp int) string {
@@ -114,25 +128,25 @@ func convertTimeToFormat(timetamp int) string {
 }
 
 func (a *arcinfo) Pure() string {
-	return "PURE: " + strconv.Itoa(a.Value[0].Avalue.Friends[0].Recentscore[0].PerfectCount) + "(" +
-		strconv.Itoa(a.Value[0].Avalue.Friends[0].Recentscore[0].ShinyPerfectCount) + ")"
+	return "PURE: " + strconv.Itoa(a.Content.RecentScore[0].PerfectCount) + "(" +
+		strconv.Itoa(a.Content.RecentScore[0].ShinyPerfectCount) + ")"
 }
 
 func (a *arcinfo) Far() string {
-	return "FAR: " + strconv.Itoa(a.Value[0].Avalue.Friends[0].Recentscore[0].NearCount)
+	return "FAR: " + strconv.Itoa(a.Content.RecentScore[0].NearCount)
 }
 
 func (a *arcinfo) Lost() string {
-	return "LOST: " + strconv.Itoa(a.Value[0].Avalue.Friends[0].Recentscore[0].MissCount)
+	return "LOST: " + strconv.Itoa(a.Content.RecentScore[0].MissCount)
 }
 
 func (a *arcinfo) Rating() string {
-	str1 := fmt.Sprintf("%f", a.Value[0].Avalue.Friends[0].Recentscore[0].Rating)
+	str1 := fmt.Sprintf("%f", a.Content.RecentScore[0].Rating)
 	return "Result rating: " + str1
 }
 
 func (a *arcinfo) PTT() string {
-	ptt := strconv.Itoa(a.Value[0].Avalue.Friends[0].Rating)
+	ptt := strconv.Itoa(a.Content.Rating)
 	i := len(ptt)
 	if i == 3 {
 		return "PTT: " + ptt[0:1] + "." + ptt[1:]
@@ -144,8 +158,8 @@ func (a *arcinfo) PTT() string {
 }
 
 func (a *arcinfo) SongID() string {
-	Difficulty := a.Value[0].Avalue.Friends[0].Recentscore[0].Difficulty
-	id := a.Value[0].Avalue.Friends[0].Recentscore[0].SongID
+	Difficulty := a.Content.RecentScore[0].Difficulty
+	id := a.Content.RecentScore[0].SongID
 	switch Difficulty {
 	case 0:
 		return "PST" + getdifficutie(id, Difficulty)
