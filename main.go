@@ -19,7 +19,7 @@ func main() {
 		WriteTimeout: 10 * time.Second,
 		Handler:      mux,
 	}
-	mux.HandlerFunc("GET", "/user/:uid/img", arcimg.Chain(arcimg.Img, arcimg.Anticc, arcimg.Log))
+	mux.HandlerFunc("GET", `/user/:uid/svg`, arcimg.Chain(arcimg.Img, arcimg.Anticc))
 	log.Println(server.ListenAndServe())
 
 }

@@ -22,7 +22,7 @@ func Img(w http.ResponseWriter, req *http.Request) {
 	uid := p.ByName("uid")
 
 	b, err := caches.Get(uid)
-	if err == nil {
+	if err != nil {
 		temp, err, _ := sl.Do(uid, func() (interface{}, error) {
 			var err error
 			for i := 0; i < 3; i++ {
