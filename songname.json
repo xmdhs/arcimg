@@ -1633,6 +1633,14 @@
             "10"
         ]
     },
+    "turbocharger": {
+        "Name": "Turbocharger",
+        "Difficulties": [
+            "2",
+            "5",
+            "8"
+        ]
+    },
     "valhallazero": {
         "Name": "Valhalla:0",
         "Difficulties": [
